@@ -29,6 +29,7 @@
 		88A8945D2BCE738200AEC0A0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A8945C2BCE738200AEC0A0 /* LoginViewController.swift */; };
 		88A8945F2BCE761000AEC0A0 /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A8945E2BCE761000AEC0A0 /* UITextField+.swift */; };
 		88A894612BCE7A2A00AEC0A0 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A894602BCE7A2A00AEC0A0 /* UIColor+.swift */; };
+		88A894642BCEA10700AEC0A0 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A894632BCEA10700AEC0A0 /* CustomTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		88A8945C2BCE738200AEC0A0 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		88A8945E2BCE761000AEC0A0 /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
 		88A894602BCE7A2A00AEC0A0 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
+		88A894632BCEA10700AEC0A0 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 		88A894282BCE644400AEC0A0 /* 34th_SOPT_Seminar_Assignment */ = {
 			isa = PBXGroup;
 			children = (
+				88A894622BCEA0F500AEC0A0 /* Component */,
 				88A894432BCE690300AEC0A0 /* Common */,
 				88A894292BCE644400AEC0A0 /* AppDelegate.swift */,
 				88A8942B2BCE644400AEC0A0 /* SceneDelegate.swift */,
@@ -135,6 +138,14 @@
 				88A894602BCE7A2A00AEC0A0 /* UIColor+.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		88A894622BCEA0F500AEC0A0 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				88A894632BCEA10700AEC0A0 /* CustomTextField.swift */,
+			);
+			path = Component;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,6 +244,7 @@
 				88A8942A2BCE644400AEC0A0 /* AppDelegate.swift in Sources */,
 				88A8942C2BCE644400AEC0A0 /* SceneDelegate.swift in Sources */,
 				88A8945B2BCE72C100AEC0A0 /* UIView+.swift in Sources */,
+				88A894642BCEA10700AEC0A0 /* CustomTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
