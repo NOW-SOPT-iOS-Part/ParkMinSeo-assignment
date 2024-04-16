@@ -15,9 +15,9 @@ final class LoginViewController: UIViewController {
     /// 상단 타이틀 "TVING ID 로그인"
     private let titleLabel = UILabel()
     /// 아이디 입력 텍스트 필드
-    private let idTextField = UITextField()
+    private let idTextField = CustomTextField()
     /// 비밀번호 입력 텍스트 필드
-    private let pwTextField = UITextField()
+    private let pwTextField = CustomTextField()
     /// 로그인 버튼
     private let loginButton = UIButton()
     /// 아이디 찾기 버튼
@@ -30,6 +30,10 @@ final class LoginViewController: UIViewController {
     private let stillNoAccLabel = UILabel()
     /// 닉네임 만들러가기 버튼
     private let makeNicknameButton = UIButton()
+    
+    private let clearAction = UIAction(image: .icCancel, handler: { action in
+        
+    })
     
     // MARK: Life Cycle - viewDidLoad
     override func viewDidLoad() {
@@ -63,33 +67,21 @@ final class LoginViewController: UIViewController {
         }
         
         idTextField.do {
-            let attrStr = NSAttributedString(
-                string: "아이디",
-                attributes: [
-                    .font : UIFont.pretendard(.w600, size: 15),
-                    .foregroundColor : UIColor.grayScale(.r156)
-                  ])
-            $0.attributedPlaceholder = attrStr
-            $0.font = .pretendard(.w600, size: 15)
-            $0.textColor = .grayScale(.r156)
-            $0.backgroundColor = .grayScale(.r46)
-            $0.cornerRounding(3)
-            $0.addHorizontalPadding(left:22, right: 22)
+            $0.textSetUp(
+                with: "아이디",
+                font: .pretendard(.w600, size: 15),
+                fontColor: .grayScale(.r156)
+            )
         }
-        
+                
         pwTextField.do {
-            let attrStr = NSAttributedString(
-                string: "비밀번호",
-                attributes: [
-                    .font : UIFont.pretendard(.w600, size: 15),
-                    .foregroundColor : UIColor.grayScale(.r156)
-                  ])
-            $0.attributedPlaceholder = attrStr
-            $0.font = .pretendard(.w600, size: 15)
-            $0.textColor = .grayScale(.r156)
-            $0.backgroundColor = .grayScale(.r46)
-            $0.cornerRounding(3)
-            $0.addHorizontalPadding(left:22, right: 22)
+            $0.textSetUp(
+                with: "비밀번호",
+                font: .pretendard(.w600, size: 15),
+                fontColor: .grayScale(.r156)
+            )
+            $0.isSecureTextEntry = true
+            $0.setupRightView()
         }
         
         loginButton.do {
@@ -230,7 +222,6 @@ extension LoginViewController: UITextFieldDelegate {
         // textField 검증 후 상태 변경
         switch textField {
         case self.idTextField, self.pwTextField:
-            print("textFieldShouldBeginEditing")
             self.setTextFieldState(textField, activate: true)
             return true
         default:
@@ -243,7 +234,6 @@ extension LoginViewController: UITextFieldDelegate {
         // textField 검증 후 상태 변경
         switch textField {
         case self.idTextField, self.pwTextField:
-            print("textFieldShouldEndEditing")
             self.setTextFieldState(textField, activate: false)
             return true
         default:
