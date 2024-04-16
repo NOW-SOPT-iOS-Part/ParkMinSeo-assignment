@@ -66,6 +66,7 @@ final class WelcomViewController: UIViewController {
                     .foregroundColor : UIColor.white
                   ])
             $0.setAttributedTitle(attrStr, for: .normal)
+            $0.backgroundColor = .primaryRed
         }
     }
     
@@ -93,7 +94,8 @@ final class WelcomViewController: UIViewController {
         
         goToMainButton.snp.makeConstraints {
             $0.bottom.equalToSuperview().offset(-66)
-            $0.horizontalEdges.equalToSuperview().offset(20)
+            $0.left.equalToSuperview().offset(20)
+            $0.right.equalToSuperview().offset(-20)
             $0.height.equalTo(52)
         }
     }

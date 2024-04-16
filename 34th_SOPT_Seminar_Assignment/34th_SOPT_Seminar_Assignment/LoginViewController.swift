@@ -47,7 +47,7 @@ final class LoginViewController: UIViewController {
         self.view.backgroundColor = .black // == rgba(0,0,0,1)
         idTextField.delegate = self
         pwTextField.delegate = self
-        
+        loginButton.addAction(pushWelcomeVC, for: .touchUpInside)
     }
     
     // MARK: setUpStyle
@@ -235,6 +235,13 @@ final class LoginViewController: UIViewController {
         self.loginButton.makeBorder(width: isActive ? 0 : 1, color: .grayScale(.r46))
         self.loginButton.backgroundColor = isActive ? .primaryRed : .black
         self.loginButton.isEnabled = isActive
+    }
+    
+    /// Welcome 화면으로 push합니다.
+    private lazy var pushWelcomeVC = UIAction { [weak self] _ in
+        let welcomeVC = WelcomViewController()
+        welcomeVC.userEmail = self?.idTextField.text
+        self?.navigationController?.pushViewController(welcomeVC, animated: true)
     }
 }
 
