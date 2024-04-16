@@ -9,7 +9,21 @@ import UIKit
 import SnapKit
 import Then
 
+protocol DataProvider: AnyObject {
+    /// 해당 name을 닉네임으로 설정합니다
+    /// - Parameter name: 설정할 닉네임
+    func setNickname(_ name: String)
+}
+
 final class LoginViewController: UIViewController {
+    
+    // MARK: Variables
+    /// 등록 닉네임
+    private var nickname: String? {
+        didSet {
+            print("nickname: \(nickname)")
+        }
+    }
     
     // MARK: Views
     /// 상단 타이틀 "TVING ID 로그인"
@@ -39,6 +53,7 @@ final class LoginViewController: UIViewController {
         setUpStyle()
         setUpLayout()
         setUpConstraint()
+        self.setLoginButtonStatus(isActive: false) // 로그인 버튼 비활성화
         
     }
     
@@ -49,7 +64,6 @@ final class LoginViewController: UIViewController {
         pwTextField.delegate = self
         loginButton.addAction(pushWelcomeVC, for: .touchUpInside)
         makeNicknameButton.addAction(presentNicknameBottomSheet, for: .touchUpInside)
-        self.setLoginButtonStatus(isActive: false) // 로그인 버튼 비활성화
     }
     
     // MARK: setUpStyle
@@ -242,7 +256,8 @@ final class LoginViewController: UIViewController {
     /// Welcome 화면으로 push합니다.
     private lazy var pushWelcomeVC = UIAction { [weak self] _ in
         let welcomeVC = WelcomeViewController()
-        welcomeVC.userEmail = self?.idTextField.text
+//        welcomeVC.userEmail = self?.idTextField.text
+        welcomeVC.userEmail = self?.nickname
         self?.navigationController?.pushViewController(welcomeVC, animated: true)
     }
     
@@ -253,8 +268,15 @@ final class LoginViewController: UIViewController {
             sheet.detents = [.medium()]
             sheet.preferredCornerRadius = 30
         }
-        
+        bottomSheet.delegate = self
         self?.present(bottomSheet, animated: true)
+    }
+}
+
+// MARK: DataProviderDelegate
+extension LoginViewController: DataProvider {
+    func setNickname(_ name: String) {
+        self.nickname = name
     }
 }
 

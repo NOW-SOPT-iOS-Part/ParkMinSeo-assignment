@@ -11,6 +11,9 @@ import Then
 
 final class NicknameBottomSheetViewController: UIViewController {
     
+    // MARK: Variables
+    weak var delegate: DataProvider? 
+    
     // MARK: Views
     private let nicknamePleaseLabel = UILabel()
     private let nicknameTextField = CustomTextField()
@@ -24,6 +27,7 @@ final class NicknameBottomSheetViewController: UIViewController {
         setUpStyle()
         setUpLayout()
         setUpConstraint()
+        setSaveButtonStatus(isActive: false) // 저장 버튼 비활성화
         
     }
     
@@ -31,8 +35,7 @@ final class NicknameBottomSheetViewController: UIViewController {
     private func setUpView() {
         self.view.backgroundColor = .white
         nicknameTextField.delegate = self
-//        saveButton.addAction(, for: .touchUpInside)
-        setSaveButtonStatus(isActive: false) // 저장 버튼 비활성화
+        saveButton.addAction(saveNickname, for: .touchUpInside)
     }
     
     // MARK: setUpStyle
@@ -49,9 +52,9 @@ final class NicknameBottomSheetViewController: UIViewController {
         
         nicknameTextField.do {
             $0.textSetUp(
-                with: "아요짱!!!!!!",
-                font: .pretendard(.w600, size: 14),
-                fontColor: .black
+                with: "닉네임",
+                font: .pretendard(.w600, size: 15),
+                fontColor: .grayScale(.r156)
             )
         }
         
@@ -113,8 +116,12 @@ final class NicknameBottomSheetViewController: UIViewController {
     }
     
     // MARK: private function
+    /// 닉네임을 저장하고, 화면을 닫습니다.
     private lazy var saveNickname = UIAction { [weak self] _ in
-//        self?.
+        if let nickname = self?.nicknameTextField.text {
+            self?.delegate?.setNickname(nickname)
+        }
+        self?.dismiss(animated: true)
     }
     
     /// 저장하기 버튼의 활성화 여부에 따라 UI 상태와 enable 여부를 반영합니다.
