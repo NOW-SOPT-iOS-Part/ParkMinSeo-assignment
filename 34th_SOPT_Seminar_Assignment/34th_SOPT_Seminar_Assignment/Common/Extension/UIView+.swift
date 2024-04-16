@@ -17,4 +17,12 @@ extension UIView {
         self.layer.cornerRadius = radius
         self.clipsToBounds = true
     }
+    
+    /// UIView의 테두리 추가
+    /// - Parameter width: 테두리 굵기
+    /// - Parameter color: 테두리 색
+    func makeBorder(width: CGFloat, color: UIColor) {
+        self.layer.borderWidth = width
+        self.layer.borderColor = color.cgColor
+    }
 }
