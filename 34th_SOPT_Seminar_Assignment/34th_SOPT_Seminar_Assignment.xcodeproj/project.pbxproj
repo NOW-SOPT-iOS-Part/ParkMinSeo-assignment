@@ -27,6 +27,7 @@
 		88A894592BCE69AC00AEC0A0 /* Font+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A894582BCE69AC00AEC0A0 /* Font+.swift */; };
 		88A8945B2BCE72C100AEC0A0 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A8945A2BCE72C100AEC0A0 /* UIView+.swift */; };
 		88A8945D2BCE738200AEC0A0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A8945C2BCE738200AEC0A0 /* LoginViewController.swift */; };
+		88A8945F2BCE761000AEC0A0 /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A8945E2BCE761000AEC0A0 /* UITextField+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		88A894582BCE69AC00AEC0A0 /* Font+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+.swift"; sourceTree = "<group>"; };
 		88A8945A2BCE72C100AEC0A0 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		88A8945C2BCE738200AEC0A0 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		88A8945E2BCE761000AEC0A0 /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +129,7 @@
 			children = (
 				88A894582BCE69AC00AEC0A0 /* Font+.swift */,
 				88A8945A2BCE72C100AEC0A0 /* UIView+.swift */,
+				88A8945E2BCE761000AEC0A0 /* UITextField+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -221,6 +224,7 @@
 			files = (
 				88A8945D2BCE738200AEC0A0 /* LoginViewController.swift in Sources */,
 				88A894592BCE69AC00AEC0A0 /* Font+.swift in Sources */,
+				88A8945F2BCE761000AEC0A0 /* UITextField+.swift in Sources */,
 				88A8942E2BCE644400AEC0A0 /* ViewController.swift in Sources */,
 				88A8942A2BCE644400AEC0A0 /* AppDelegate.swift in Sources */,
 				88A8942C2BCE644400AEC0A0 /* SceneDelegate.swift in Sources */,
