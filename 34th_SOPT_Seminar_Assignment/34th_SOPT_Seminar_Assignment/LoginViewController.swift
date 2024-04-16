@@ -239,7 +239,7 @@ final class LoginViewController: UIViewController {
     
     /// Welcome 화면으로 push합니다.
     private lazy var pushWelcomeVC = UIAction { [weak self] _ in
-        let welcomeVC = WelcomViewController()
+        let welcomeVC = WelcomeViewController()
         welcomeVC.userEmail = self?.idTextField.text
         self?.navigationController?.pushViewController(welcomeVC, animated: true)
     }

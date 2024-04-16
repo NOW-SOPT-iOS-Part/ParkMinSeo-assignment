@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 import Then
 
-final class WelcomViewController: UIViewController {
+final class WelcomeViewController: UIViewController {
     
     // MARK: Variables
     var userEmail: String?
@@ -107,5 +107,5 @@ final class WelcomViewController: UIViewController {
 }
 
 #Preview {
-    WelcomViewController()
+    WelcomeViewController()
 }
