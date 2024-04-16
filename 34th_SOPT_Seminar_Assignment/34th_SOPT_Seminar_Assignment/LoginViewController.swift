@@ -19,9 +19,11 @@ final class LoginViewController: UIViewController {
     /// 비밀번호 입력 텍스트 필드
     private let pwTextField = UITextField()
     /// 로그인 버튼
-    private let loginButtin = UIButton()
+    private let loginButton = UIButton()
     /// 아이디 찾기 버튼
     private let findIdButton = UIButton()
+    /// 아이디 찾기 | 비밀번호 찾기 중간 구분선
+    private let divider = UIView()
     /// 비밀번호 찾기 버튼
     private let findPwButton = UIButton()
     /// 중간 "아직 계정이 없으신가요" 라벨
@@ -48,21 +50,176 @@ final class LoginViewController: UIViewController {
     
     // MARK: setUpStyle
     private func setUpStyle() {
+        titleLabel.do {
+            let attrStr = NSAttributedString(
+                string: "TVING ID 로그인",
+                attributes: [
+                    .font : UIFont.pretendard(.w500, size: 23),
+                    .foregroundColor : UIColor.grayScale(.r214)
+                  ])
+            $0.attributedText = attrStr
+        }
         
+        idTextField.do {
+            let attrStr = NSAttributedString(
+                string: "아이디",
+                attributes: [
+                    .font : UIFont.pretendard(.w600, size: 15),
+                    .foregroundColor : UIColor.grayScale(.r156)
+                  ])
+            $0.attributedPlaceholder = attrStr
+            $0.font = .pretendard(.w600, size: 15)
+            $0.textColor = .grayScale(.r156)
+            $0.backgroundColor = .grayScale(.r46)
+            $0.cornerRounding(3)
+            $0.addHorizontalPadding(left:22, right: 22)
+        }
+        
+        pwTextField.do {
+            let attrStr = NSAttributedString(
+                string: "비밀번호",
+                attributes: [
+                    .font : UIFont.pretendard(.w600, size: 15),
+                    .foregroundColor : UIColor.grayScale(.r156)
+                  ])
+            $0.attributedPlaceholder = attrStr
+            $0.font = .pretendard(.w600, size: 15)
+            $0.textColor = .grayScale(.r156)
+            $0.backgroundColor = .grayScale(.r46)
+            $0.cornerRounding(3)
+            $0.addHorizontalPadding(left:22, right: 22)
+        }
+        
+        loginButton.do {
+            let attrStr = NSAttributedString(
+                string: "로그인하기",
+                attributes: [
+                    .font : UIFont.pretendard(.w600, size: 14),
+                    .foregroundColor : UIColor.grayScale(.r156)
+                  ])
+            $0.setAttributedTitle(attrStr, for: .normal)
+            $0.cornerRounding(3)
+            $0.makeBorder(width: 1, color: .grayScale(.r46))
+        }
+        
+        findIdButton.do {
+            let attrStr = NSAttributedString(
+                string: "아이디 찾기",
+                attributes: [
+                    .font : UIFont.pretendard(.w600, size: 14),
+                    .foregroundColor : UIColor.grayScale(.r156)
+                  ])
+            $0.setAttributedTitle(attrStr, for: .normal)
+        }
+        
+        divider.do {
+            $0.backgroundColor = .grayScale(.r46)
+        }
+        
+        findPwButton.do {
+            let attrStr = NSAttributedString(
+                string: "비밀번호 찾기",
+                attributes: [
+                    .font : UIFont.pretendard(.w600, size: 14),
+                    .foregroundColor : UIColor.grayScale(.r156)
+                  ])
+            $0.setAttributedTitle(attrStr, for: .normal)
+        }
+        
+        stillNoAccLabel.do {
+            let attrStr = NSAttributedString(
+                string: "아직 계정이 없으신가요?",
+                attributes: [
+                    .font : UIFont.pretendard(.w600, size: 14),
+                    .foregroundColor : UIColor.grayScale(.r98)
+                  ])
+            $0.attributedText = attrStr
+        }
+        
+        makeNicknameButton.do {
+            // TODO: 밑줄 색 같은지 체크
+            let attrStr = NSAttributedString(
+                string: "닉네임 만들러가기",
+                attributes: [
+                    .font : UIFont.pretendard(.w600, size: 14),
+                    .foregroundColor : UIColor.grayScale(.r156),
+                    .underlineStyle : NSUnderlineStyle.single.rawValue
+                  ])
+            $0.setAttributedTitle(attrStr, for: .normal)
+        }
     }
     
     // MARK: setUpLayout
     private func setUpLayout() {
         [
-
+            titleLabel,
+            idTextField,
+            pwTextField,
+            loginButton,
+            findIdButton,
+            divider,
+            findPwButton,
+            stillNoAccLabel,
+            makeNicknameButton
         ].forEach { self.view.addSubview($0) }
     }
     
     // MARK: setUpConstraint
     private func setUpConstraint() {
-
+        titleLabel.snp.makeConstraints {
+            $0.top.equalTo(self.view.safeAreaLayoutGuide).offset(50)
+            $0.centerX.equalToSuperview()
+        }
+        
+        idTextField.snp.makeConstraints {
+            $0.top.equalTo(titleLabel.snp.bottom).offset(31)
+            $0.width.equalTo(335)
+            $0.height.equalTo(52)
+            $0.centerX.equalToSuperview()
+        }
+        
+        pwTextField.snp.makeConstraints {
+            $0.top.equalTo(idTextField.snp.bottom).offset(7)
+            $0.size.equalTo(idTextField)
+            $0.centerX.equalToSuperview()
+        }
+        
+        loginButton.snp.makeConstraints {
+            $0.top.equalTo(pwTextField.snp.bottom).offset(21)
+            $0.size.equalTo(idTextField)
+            $0.centerX.equalToSuperview()
+        }
+        
+        divider.snp.makeConstraints {
+            $0.top.equalTo(loginButton.snp.bottom).offset(36)
+            $0.width.equalTo(1)
+            $0.height.equalTo(12)
+            $0.centerX.equalToSuperview()
+        }
+        
+        findIdButton.snp.makeConstraints {
+            $0.top.equalTo(loginButton.snp.bottom).offset(31)
+            $0.right.equalTo(divider.snp.left).offset(-33)
+        }
+        
+        findPwButton.snp.makeConstraints {
+            $0.top.equalTo(loginButton.snp.bottom).offset(31)
+            $0.left.equalTo(divider.snp.right).offset(36)
+        }
+        
+        stillNoAccLabel.snp.makeConstraints {
+            $0.top.equalTo(divider.snp.bottom).offset(33)
+            $0.left.equalToSuperview().offset(51)
+        }
+        
+        makeNicknameButton.snp.makeConstraints {
+            $0.top.equalTo(divider.snp.bottom).offset(27)
+            $0.left.equalTo(findPwButton)
+        }
     }
     
-    
-    
+}
+
+#Preview {
+    LoginViewController()
 }
