@@ -10,6 +10,7 @@ import UIKit
 
 extension UIFont {
     
+    /// Pretendard 폰트를 Weight 별로 정의한 enum입니다
     enum PretendardInWeight {
         case w100
         case w200
@@ -21,6 +22,7 @@ extension UIFont {
         case w800
         case w900
         
+        /// 해당 폰트의 폰트 이름입니다
         var name: String {
             switch self {
                 
@@ -45,6 +47,7 @@ extension UIFont {
             }
         }
         
+        // 해당 폰트의 실제 weight값입니다
         var toFloat: CGFloat {
             switch self {
                 
@@ -70,6 +73,9 @@ extension UIFont {
         }
     }
     
+    /// 해당 weight와 size에 맞는 pretendard 폰트를 리턴합니다
+    /// - Parameter weight: 폰트 weight
+    /// - Parameter size: 폰트 size
     static func pretendard(_ weight: PretendardInWeight, size: CGFloat) -> UIFont {
         return UIFont(name: weight.name, size: size) ?? UIFont.systemFont(ofSize: weight.toFloat)
     }
