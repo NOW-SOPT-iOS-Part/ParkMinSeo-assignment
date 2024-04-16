@@ -48,6 +48,8 @@ final class LoginViewController: UIViewController {
         idTextField.delegate = self
         pwTextField.delegate = self
         loginButton.addAction(pushWelcomeVC, for: .touchUpInside)
+        makeNicknameButton.addAction(presentNicknameBottomSheet, for: .touchUpInside)
+        self.setLoginButtonStatus(isActive: false) // 로그인 버튼 비활성화
     }
     
     // MARK: setUpStyle
@@ -242,6 +244,17 @@ final class LoginViewController: UIViewController {
         let welcomeVC = WelcomeViewController()
         welcomeVC.userEmail = self?.idTextField.text
         self?.navigationController?.pushViewController(welcomeVC, animated: true)
+    }
+    
+    /// Nickname BottomSheet를  present합니다.
+    private lazy var presentNicknameBottomSheet = UIAction { [weak self] _ in
+        let bottomSheet = NicknameBottomSheetViewController()
+        if let sheet = bottomSheet.sheetPresentationController {
+            sheet.detents = [.medium()]
+            sheet.preferredCornerRadius = 30
+        }
+        
+        self?.present(bottomSheet, animated: true)
     }
 }
 

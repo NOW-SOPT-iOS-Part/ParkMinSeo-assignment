@@ -33,7 +33,7 @@ extension String {
     ///  - 최소 1자 이상, 최대 10자 이하의 길이를 가져야 합니다.
     ///  - 한글 입력만 가능합니다.
     func isValidNickname() -> Bool {
-        let nickRegex = "[가-힣]{1, 10}"
+        let nickRegex = "^[가-힣]{1,10}$"
         let nickPredicate = NSPredicate(format: "SELF MATCHES %@", nickRegex)
         return nickPredicate.evaluate(with: self)
     }
