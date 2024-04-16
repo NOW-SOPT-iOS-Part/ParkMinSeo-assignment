@@ -9,6 +9,12 @@ import UIKit
 import SnapKit
 import Then
 
+enum ValidationError: Error {
+    case invalidId
+    case invalidPw
+    case invalidNickname
+}
+
 final class LoginViewController: UIViewController {
     
     // MARK: Views
@@ -212,10 +218,22 @@ final class LoginViewController: UIViewController {
         }
     }
     
-    
-    
+    // MARK: touchesEnded
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesEnded(touches, with: event)
+        
+        // 터치된 뷰를 가져옵니다.
+        guard let touch = touches.first else { return }
+        let touchLocation = touch.location(in: self.view)
+        let tappedView = self.view.hitTest(touchLocation, with: event)
+        
+        // TextField 이외의 다른 곳을 탭했을 때 해당 TextField의 편집을 종료합니다.
+        if tappedView != idTextField { idTextField.endEditing(true) }
+        if tappedView != pwTextField { pwTextField.endEditing(true) }
+    }
 }
 
+// MARK: UITextFieldDelegate
 extension LoginViewController: UITextFieldDelegate {
     // 텍스트 필드를 탭해서, 편집 시작 전에 호출
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
@@ -231,21 +249,56 @@ extension LoginViewController: UITextFieldDelegate {
     
     // 편집이 끝나기 전에 호출
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-        // textField 검증 후 상태 변경
+        // ID PW textField 모두 작성되었는지 검증
+        guard let idText = self.idTextField.text, let pwText = self.pwTextField.text else { return true }
+        
+        // ID PW textField 정규식 검증
+        guard idValidate(idText: self.idTextField.text) && pwValidate(pwText: self.pwTextField.text) else { return true }
+        
+        loginButton.isEnabled = !idText.isEmpty && !pwText.isEmpty
+        print("ID PW 검증 완료")
+        
+        return true
+    }
+    
+    // 편집이 끝난 후 호출
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        // textField 검증 후 해당 textField 비활성화 UI 적용
         switch textField {
         case self.idTextField, self.pwTextField:
             self.setTextFieldState(textField, activate: false)
-            return true
         default:
-            return false
+            return
         }
     }
     
     /// 해당 TextField의 활성화 상태를 UI에 반영합니다.
     /// - Parameter textField: 적용할 텍스트 필드
     /// - Parameter activate: 활성화 상태
-    func setTextFieldState(_ textField: UITextField, activate: Bool) {
+    private func setTextFieldState(_ textField: UITextField, activate: Bool) {
         textField.makeBorder(width: activate ? 1 : 0, color: .grayScale(.r156))
+    }
+    
+    /// idText로 받은 문자열이 id 정규식에 맞는지 확인합니다
+    /// - Parameter idText: idText 문자열
+    /// - Returns: 정규식에 적합한 지 여부
+    private func idValidate(idText: String?) -> Bool {
+        guard let idText = idText, idText.isValidEmail() else {
+            print("올바른 EMAIL 형식이 아닙니다")
+            return false
+        }
+        return true
+    }
+    
+    /// pwText로 받은 문자열이 pw 정규식에 맞는지 확인합니다
+    /// - Parameter pwText: pwText 문자열
+    /// - Returns: 정규식에 적합한 지 여부
+    private func pwValidate(pwText: String?) -> Bool {
+        guard let pwText = pwText, pwText.isValidPassword() else {
+            print("최소 8자 이상, 최대 20자 이하의 길이를 가져야 합니다.\n적어도 하나의 영문자(대소문자 구분)와 하나의 숫자가 포함되어야 합니다.")
+            return false
+        }
+        return true
     }
 }
 

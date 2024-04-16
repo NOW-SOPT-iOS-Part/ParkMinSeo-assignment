@@ -24,7 +24,7 @@ extension String {
     /// - 최소 8자 이상, 최대 20자 이하의 길이를 가져야 합니다.
     /// - 적어도 하나의 영문자(대소문자 구분)와 하나의 숫자가 포함되어야 합니다.
     func isValidPassword() -> Bool {
-        let passwordRegex = "^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,20}$"
+        let passwordRegex = "^(?=.*[A-Za-z])(?=.*\\d).{8,20}$"
         let passwordPredicate = NSPredicate(format: "SELF MATCHES %@", passwordRegex)
         return passwordPredicate.evaluate(with: self)
     }
