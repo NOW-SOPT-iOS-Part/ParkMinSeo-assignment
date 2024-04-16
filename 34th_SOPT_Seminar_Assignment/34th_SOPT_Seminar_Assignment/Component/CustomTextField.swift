@@ -50,14 +50,16 @@ final class CustomTextField: UITextField {
     }
     
     // MARK: private function
+    /// 현재 텍스트 필드의 텍스트를 초기화합니다.
     private lazy var clearText = UIAction { [weak self] _ in
         self?.text = ""
     }
     
+    /// 현재 텍스트 필드의 텍스트 내용을 숨김/보임 처리합니다.
     private lazy var toggleVisibility = UIAction { [weak self] _ in
         guard let self = self else { return }
         self.isSecureTextEntry.toggle()
-        self.visibleButton.setImage(self.isSecureTextEntry ? .icShowEye : .icHideEye, for: .normal)
+        self.visibleButton.setImage(self.isSecureTextEntry ? .icHideEye : .icShowEye, for: .normal)
     }
 }
 
@@ -80,9 +82,13 @@ extension CustomTextField {
         self.textColor = fontColor
     }
     
-    /// TextField의 RightView에 cleartBtn, visibleBtn을 추가합니다.
-    func setupRightView() {
-        let stackView = UIStackView(arrangedSubviews: [clearButton, visibleButton])
+    /// TextField의 RightView에 clearBtn, visibleBtn을 추가합니다.
+    func setupRightView(clearBtn: Bool = false, visibleBtn: Bool = false) {
+        let btnList = [(clearButton, clearBtn), (visibleButton, visibleBtn)].compactMap {
+            if $0.1 { return $0.0 }
+            else { return nil }
+        }
+        let stackView = UIStackView(arrangedSubviews: btnList)
             .then {
                 $0.axis = .horizontal
                 $0.spacing = 16

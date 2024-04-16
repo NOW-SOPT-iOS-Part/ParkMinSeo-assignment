@@ -72,6 +72,7 @@ final class LoginViewController: UIViewController {
                 font: .pretendard(.w600, size: 15),
                 fontColor: .grayScale(.r156)
             )
+            $0.setupRightView(clearBtn: true)
         }
                 
         pwTextField.do {
@@ -81,7 +82,7 @@ final class LoginViewController: UIViewController {
                 fontColor: .grayScale(.r156)
             )
             $0.isSecureTextEntry = true
-            $0.setupRightView()
+            $0.setupRightView(clearBtn: true, visibleBtn: true)
         }
         
         loginButton.do {
@@ -131,7 +132,6 @@ final class LoginViewController: UIViewController {
         }
         
         makeNicknameButton.do {
-            // TODO: 밑줄 색 같은지 체크
             let attrStr = NSAttributedString(
                 string: "닉네임 만들러가기",
                 attributes: [
