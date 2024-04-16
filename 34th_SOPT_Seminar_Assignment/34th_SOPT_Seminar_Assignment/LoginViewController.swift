@@ -31,10 +31,6 @@ final class LoginViewController: UIViewController {
     /// 닉네임 만들러가기 버튼
     private let makeNicknameButton = UIButton()
     
-    private let clearAction = UIAction(image: .icCancel, handler: { action in
-        
-    })
-    
     // MARK: Life Cycle - viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
