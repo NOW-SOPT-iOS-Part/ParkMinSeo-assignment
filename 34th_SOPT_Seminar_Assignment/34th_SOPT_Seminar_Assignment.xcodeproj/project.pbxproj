@@ -25,6 +25,7 @@
 		88A894552BCE693000AEC0A0 /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 88A8944C2BCE693000AEC0A0 /* Pretendard-Regular.otf */; };
 		88A894562BCE693000AEC0A0 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 88A8944D2BCE693000AEC0A0 /* Pretendard-Medium.otf */; };
 		88A894592BCE69AC00AEC0A0 /* Font+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A894582BCE69AC00AEC0A0 /* Font+.swift */; };
+		88A8945B2BCE72C100AEC0A0 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A8945A2BCE72C100AEC0A0 /* UIView+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		88A8944C2BCE693000AEC0A0 /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
 		88A8944D2BCE693000AEC0A0 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
 		88A894582BCE69AC00AEC0A0 /* Font+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+.swift"; sourceTree = "<group>"; };
+		88A8945A2BCE72C100AEC0A0 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				88A894582BCE69AC00AEC0A0 /* Font+.swift */,
+				88A8945A2BCE72C100AEC0A0 /* UIView+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -217,6 +220,7 @@
 				88A8942E2BCE644400AEC0A0 /* ViewController.swift in Sources */,
 				88A8942A2BCE644400AEC0A0 /* AppDelegate.swift in Sources */,
 				88A8942C2BCE644400AEC0A0 /* SceneDelegate.swift in Sources */,
+				88A8945B2BCE72C100AEC0A0 /* UIView+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
