@@ -45,6 +45,8 @@ final class LoginViewController: UIViewController {
     // MARK: setUpView
     private func setUpView() {
         self.view.backgroundColor = .black // == rgba(0,0,0,1)
+        idTextField.delegate = self
+        pwTextField.delegate = self
         
     }
     
@@ -218,6 +220,43 @@ final class LoginViewController: UIViewController {
         }
     }
     
+    
+    
+}
+
+extension LoginViewController: UITextFieldDelegate {
+    // 텍스트 필드를 탭해서, 편집 시작 전에 호출
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        // textField 검증 후 상태 변경
+        switch textField {
+        case self.idTextField, self.pwTextField:
+            print("textFieldShouldBeginEditing")
+            self.setTextFieldState(textField, activate: true)
+            return true
+        default:
+            return false
+        }
+    }
+    
+    // 편집이 끝나기 전에 호출
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        // textField 검증 후 상태 변경
+        switch textField {
+        case self.idTextField, self.pwTextField:
+            print("textFieldShouldEndEditing")
+            self.setTextFieldState(textField, activate: false)
+            return true
+        default:
+            return false
+        }
+    }
+    
+    /// 해당 TextField의 활성화 상태를 UI에 반영합니다.
+    /// - Parameter textField: 적용할 텍스트 필드
+    /// - Parameter activate: 활성화 상태
+    func setTextFieldState(_ textField: UITextField, activate: Bool) {
+        textField.makeBorder(width: activate ? 1 : 0, color: .grayScale(.r156))
+    }
 }
 
 #Preview {
