@@ -9,12 +9,6 @@ import UIKit
 import SnapKit
 import Then
 
-enum ValidationError: Error {
-    case invalidId
-    case invalidPw
-    case invalidNickname
-}
-
 final class LoginViewController: UIViewController {
     
     // MARK: Views
@@ -231,6 +225,21 @@ final class LoginViewController: UIViewController {
         if tappedView != idTextField { idTextField.endEditing(true) }
         if tappedView != pwTextField { pwTextField.endEditing(true) }
     }
+    
+    // MARK: private function
+    /// 로그인 버튼의 활성화 여부에 따라 UI 상태와 enable 여부를 반영합니다.
+    private func setLoginButtonStatus(isActive: Bool) {
+        let attrStr = NSAttributedString(
+            string: "로그인하기",
+            attributes: [
+                .font : UIFont.pretendard(.w600, size: 14),
+                .foregroundColor : isActive ? UIColor.white : UIColor.grayScale(.r156)
+              ])
+        self.loginButton.setAttributedTitle(attrStr, for: .normal)
+        self.loginButton.makeBorder(width: isActive ? 0 : 1, color: .grayScale(.r46))
+        self.loginButton.backgroundColor = isActive ? .primaryRed : .black
+        self.loginButton.isEnabled = isActive
+    }
 }
 
 // MARK: UITextFieldDelegate
@@ -249,15 +258,14 @@ extension LoginViewController: UITextFieldDelegate {
     
     // 편집이 끝나기 전에 호출
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-        // ID PW textField 모두 작성되었는지 검증
         guard let idText = self.idTextField.text, let pwText = self.pwTextField.text else { return true }
         
         // ID PW textField 정규식 검증
-        guard idValidate(idText: self.idTextField.text) && pwValidate(pwText: self.pwTextField.text) else { return true }
+        let validId = idValidate(idText)
+        let validPw = pwValidate(pwText)
         
-        loginButton.isEnabled = !idText.isEmpty && !pwText.isEmpty
-        print("ID PW 검증 완료")
-        
+        // ID PW textField 모두 작성되었는지까지 반영
+        self.setLoginButtonStatus(isActive: validId && validPw)
         return true
     }
     
@@ -282,8 +290,8 @@ extension LoginViewController: UITextFieldDelegate {
     /// idText로 받은 문자열이 id 정규식에 맞는지 확인합니다
     /// - Parameter idText: idText 문자열
     /// - Returns: 정규식에 적합한 지 여부
-    private func idValidate(idText: String?) -> Bool {
-        guard let idText = idText, idText.isValidEmail() else {
+    private func idValidate(_ idText: String) -> Bool {
+        guard idText.isValidEmail() else {
             print("올바른 EMAIL 형식이 아닙니다")
             return false
         }
@@ -293,8 +301,8 @@ extension LoginViewController: UITextFieldDelegate {
     /// pwText로 받은 문자열이 pw 정규식에 맞는지 확인합니다
     /// - Parameter pwText: pwText 문자열
     /// - Returns: 정규식에 적합한 지 여부
-    private func pwValidate(pwText: String?) -> Bool {
-        guard let pwText = pwText, pwText.isValidPassword() else {
+    private func pwValidate(_ pwText: String) -> Bool {
+        guard pwText.isValidPassword() else {
             print("최소 8자 이상, 최대 20자 이하의 길이를 가져야 합니다.\n적어도 하나의 영문자(대소문자 구분)와 하나의 숫자가 포함되어야 합니다.")
             return false
         }
