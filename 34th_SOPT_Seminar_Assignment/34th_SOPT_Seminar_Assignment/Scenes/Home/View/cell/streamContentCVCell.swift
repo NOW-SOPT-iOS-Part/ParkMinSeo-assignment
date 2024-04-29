@@ -125,25 +125,26 @@ class streamContentCVCell: UICollectionViewCell {
         
         rankLabel.snp.makeConstraints {
             $0.top.equalTo(contentImageView.snp.bottom).offset(8)
-            $0.leading.equalToSuperview().offset(8)
+            $0.leading.equalToSuperview().offset(6)
+            $0.size.equalTo(30)
         }
         
         broadcastingCompLabel.snp.makeConstraints {
-            $0.top.equalTo(contentImageView).offset(12)
-            $0.leading.equalTo(rankLabel.snp.trailing).offset(2)
-            $0.trailing.equalToSuperview().offset(-8).priority(.low)
+            $0.top.equalTo(contentImageView.snp.bottom).offset(12)
+            $0.leading.equalTo(rankLabel.snp.trailing)
+            $0.trailing.equalToSuperview().offset(-6).priority(.low)
         }
         
         contentTitle.snp.makeConstraints {
             $0.top.equalTo(broadcastingCompLabel.snp.bottom).offset(2)
             $0.leading.equalTo(broadcastingCompLabel)
-            $0.trailing.equalToSuperview().offset(-8).priority(.low)
+            $0.trailing.equalToSuperview().offset(-6).priority(.low)
         }
         
         viewershipLabel.snp.makeConstraints {
             $0.top.equalTo(contentTitle.snp.bottom).offset(2)
             $0.leading.equalTo(broadcastingCompLabel)
-            $0.trailing.equalToSuperview().offset(-8).priority(.low)
+            $0.trailing.equalToSuperview().offset(-6).priority(.low)
         }
     }
         
@@ -154,6 +155,7 @@ extension streamContentCVCell {
     
     func fetchData(_ data: streamContent) {
         self.cellContent = data
+        setUpStyle()
     }
 }
 

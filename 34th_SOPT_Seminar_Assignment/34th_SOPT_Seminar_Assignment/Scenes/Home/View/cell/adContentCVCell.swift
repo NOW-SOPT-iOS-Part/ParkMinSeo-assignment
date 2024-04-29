@@ -46,7 +46,7 @@ class adContentCVCell: UICollectionViewCell {
     private func setUpStyle() {
         contentImageView.do {
             $0.image = UIImage(named: cellContent.image)
-            $0.contentMode = .scaleAspectFill
+            $0.contentMode = .scaleAspectFit
             $0.cornerRounding(3)
         }
     }
@@ -71,6 +71,7 @@ class adContentCVCell: UICollectionViewCell {
 extension adContentCVCell {
     func fetchData(_ data: adContent) {
         self.cellContent = data
+        setUpStyle()
     }
 }
 

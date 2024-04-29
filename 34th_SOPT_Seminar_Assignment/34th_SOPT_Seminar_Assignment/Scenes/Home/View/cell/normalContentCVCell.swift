@@ -96,6 +96,7 @@ extension normalContentCVCell {
     
     func fetchData(_ data: normalContent) {
         self.cellContent = data
+        setUpStyle()
     }
 }
 
