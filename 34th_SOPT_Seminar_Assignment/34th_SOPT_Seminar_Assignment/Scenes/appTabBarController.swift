@@ -13,7 +13,7 @@ final class appTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
        
-        let tabOne = UINavigationController(rootViewController: WelcomeViewController())
+        let tabOne = UINavigationController(rootViewController: homeViewController())
         tabOne.tabBarItem = UITabBarItem(
             title: "홈",
             image: UIImage(systemName: "house"),
