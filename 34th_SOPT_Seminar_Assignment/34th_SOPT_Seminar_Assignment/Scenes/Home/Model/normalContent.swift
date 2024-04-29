@@ -15,4 +15,11 @@ struct normalContent {
     let image: String
     /// 컨텐츠 타이틀
     let title: String
+        
+    // default init
+    init() {
+        self.contentId = -1
+        self.image = "contentImage1"
+        self.title = "defaultTitle"
+    }
 }

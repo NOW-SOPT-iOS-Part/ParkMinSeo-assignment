@@ -5,4 +5,11 @@
 //  Created by 박민서 on 4/29/24.
 //
 
-import Foundation
+import UIKit
+import SnapKit
+import Then
+
+final class homeView: UIView {
+    
+    
+}
