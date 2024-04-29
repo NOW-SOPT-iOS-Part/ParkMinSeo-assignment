@@ -28,6 +28,11 @@ final class mainCollectionView: UICollectionView {
     }
     
     private func registerCells() {
+        self.register(
+            HeaderView.self,
+            forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+            withReuseIdentifier: HeaderView.className
+        )
         self.register(normalContentCVCell.self, forCellWithReuseIdentifier: normalContentCVCell.className)
         self.register(streamContentCVCell.self, forCellWithReuseIdentifier: streamContentCVCell.className)
         self.register(adContentCVCell.self, forCellWithReuseIdentifier: adContentCVCell.className)
@@ -70,10 +75,15 @@ extension mainCollectionView {
         let groupSize = NSCollectionLayoutSize(widthDimension: .estimated(100), heightDimension: .estimated(180))
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
         
+        // header
+        let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(30))
+        let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)
+        
         // section
         let section = NSCollectionLayoutSection(group: group)
         section.interGroupSpacing = 8
         section.contentInsets = .init(top: 15, leading: 15, bottom: 15, trailing: 15)
+        section.boundarySupplementaryItems = [header]
         section.orthogonalScrollingBehavior = .continuous
         return section
     }
@@ -88,10 +98,15 @@ extension mainCollectionView {
         let groupSize = NSCollectionLayoutSize(widthDimension: .estimated(160), heightDimension: .estimated(150))
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
         
+        // header
+        let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(30))
+        let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)
+        
         // section
         let section = NSCollectionLayoutSection(group: group)
         section.interGroupSpacing = 8
         section.contentInsets = .init(top: 15, leading: 15, bottom: 15, trailing: 15)
+        section.boundarySupplementaryItems = [header]
         section.orthogonalScrollingBehavior = .continuous
         return section
     }

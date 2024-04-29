@@ -26,7 +26,11 @@ final class homeViewController: UIViewController {
 
 // MARK: UICollectionViewDelegate
 extension homeViewController: UICollectionViewDelegate {
-    
+    // MARK: 별도의 DiffableDataSource 없이 Header 등록 시 필요합니다
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HeaderView.className, for: indexPath) as? HeaderView else { return UICollectionReusableView() }
+        return header
+    }
 }
 
 // MARK: UICollectionViewDataSource
@@ -47,7 +51,7 @@ extension homeViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-     
+        
         switch mainCVSection.allCases[indexPath.section] {
             
         case .recommend, .event, .fantastic:
