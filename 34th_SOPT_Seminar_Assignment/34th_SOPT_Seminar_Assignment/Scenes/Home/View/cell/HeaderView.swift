@@ -12,12 +12,7 @@ import Then
 final class HeaderView: UICollectionReusableView {
     
     // MARK: Properties
-    private var cellContent: HeaderContent = HeaderContent(
-        labelTitle: "defaultLabel",
-        buttonWithAction: UIAction(
-            title: "defaultBtn"
-        ) { _ in print("header tapped") }
-    )
+    private var cellContent: HeaderContent?
     
     // MARK: Views
     /// 컨텐츠 뷰 헤더 타이틀
@@ -50,6 +45,7 @@ final class HeaderView: UICollectionReusableView {
     
     // MARK: setUpStyle
     private func setUpStyle() {
+        guard let cellContent = self.cellContent else { return }
         
         titleLabel.do {
             let attrStr = NSAttributedString(

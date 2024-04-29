@@ -13,7 +13,7 @@ import Then
 class NormalContentCVCell: UICollectionViewCell {
     
     // MARK: Properties
-    private var cellContent: NormalContent = NormalContent()
+    private var cellContent: NormalContent?
     
     // MARK: ?? CollecitonViewCell은 reusable인데 lazy var가 의미가 있는가? let과의 뷰 점유 차이량은??
     
@@ -48,6 +48,8 @@ class NormalContentCVCell: UICollectionViewCell {
     
     // MARK: setUpStyle
     private func setUpStyle() {
+        guard let cellContent = self.cellContent else { return }
+        
         contentImageView.do {
             $0.image = UIImage(named: cellContent.image)
             $0.contentMode = .scaleAspectFill

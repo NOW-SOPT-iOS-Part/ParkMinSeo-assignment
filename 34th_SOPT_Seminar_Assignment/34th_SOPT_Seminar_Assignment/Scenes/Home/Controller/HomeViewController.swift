@@ -10,6 +10,10 @@ import SnapKit
 
 final class HomeViewController: UIViewController {
     
+    // MARK: Properties
+    private let normalDummyData = NormalContent.dummyData()
+    private let streamDummyData = StreamContent.dummyData()
+    
     // MARK: View
     private let rootView = HomeView()
     private let topAboveView = topView()
@@ -94,15 +98,15 @@ extension HomeViewController: UICollectionViewDataSource {
             
         case .recommend, .event, .fantastic:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NormalContentCVCell.className, for: indexPath) as? NormalContentCVCell else { return UICollectionViewCell() }
-            cell.fetchData(.init())
+            cell.fetchData(normalDummyData[indexPath.row])
             return cell
         case .stream:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: StreamContentCVCell.className, for: indexPath) as? StreamContentCVCell else { return UICollectionViewCell() }
-            cell.fetchData(.init(contentID: -1, image: "contentImage2", rank: 0, broadcastingCompany: "Asdf", title: "Asdf", viewerShip: 00.00))
+            cell.fetchData(streamDummyData[indexPath.row])
             return cell
         case .ads:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AdContentCVCell.className, for: indexPath) as? AdContentCVCell else { return UICollectionViewCell() }
-            cell.fetchData(.init(contentId: -1, image: "longTabImage1"))
+            cell.fetchData(.init(contentId: 1, image: "longTabImage1"))
             return cell
         }
     }

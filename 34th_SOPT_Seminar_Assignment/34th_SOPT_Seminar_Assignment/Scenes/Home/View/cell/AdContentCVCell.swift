@@ -13,7 +13,7 @@ import Then
 class AdContentCVCell: UICollectionViewCell {
     
     // MARK: Properties
-    private var cellContent: AdContent = AdContent(contentId: -1, image: "longTabImage1")
+    private var cellContent: AdContent?
     
     // MARK: Views
     /// 컨텐츠 이미지
@@ -44,6 +44,8 @@ class AdContentCVCell: UICollectionViewCell {
     
     // MARK: setUpStyle
     private func setUpStyle() {
+        guard let cellContent = self.cellContent else { return }
+        
         contentImageView.do {
             $0.image = UIImage(named: cellContent.image)
             $0.contentMode = .scaleAspectFit

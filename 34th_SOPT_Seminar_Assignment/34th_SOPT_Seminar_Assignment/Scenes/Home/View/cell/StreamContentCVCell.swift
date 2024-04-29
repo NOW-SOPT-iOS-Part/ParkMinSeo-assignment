@@ -13,7 +13,7 @@ import Then
 class StreamContentCVCell: UICollectionViewCell {
     
     // MARK: Properties
-    private var cellContent: StreamContent = StreamContent(contentID: -1, image: "contentImage1", rank: 1, broadcastingCompany: "Def", title: "Def", viewerShip: 00.00)
+    private var cellContent: StreamContent?
     
     // MARK: Views
     /// 컨텐츠 이미지
@@ -53,6 +53,8 @@ class StreamContentCVCell: UICollectionViewCell {
     
     // MARK: setUpStyle
     private func setUpStyle() {
+        guard let cellContent = self.cellContent else { return }
+        
         contentImageView.do {
             $0.image = UIImage(named: cellContent.image)
             $0.contentMode = .scaleAspectFill
@@ -73,7 +75,7 @@ class StreamContentCVCell: UICollectionViewCell {
 
         broadcastingCompLabel.do {
             let attrStr = NSAttributedString(
-                string: String(cellContent.rank),
+                string: String(cellContent.broadcastingCompany),
                 attributes: [
                     .font : UIFont.pretendard(.w400, size: 10),
                     .foregroundColor : UIColor.white
