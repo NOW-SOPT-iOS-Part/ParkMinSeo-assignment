@@ -36,6 +36,7 @@ extension SegmentControlViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SegmentCVCell.className, for: indexPath) as? SegmentCVCell else { return UICollectionViewCell() }
+        cell.fetchData(Segments.allCases[indexPath.row])
         return cell
     }
 }

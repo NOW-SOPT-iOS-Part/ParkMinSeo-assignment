@@ -6,11 +6,13 @@
 //
 
 import UIKit
+import SnapKit
 
 final class HomeViewController: UIViewController {
     
     // MARK: View
     private let rootView = HomeView()
+    private let segmentVC = SegmentControlViewController()
         
     // MARK: Life Cycle - loadView
     override func loadView() {
@@ -21,6 +23,16 @@ final class HomeViewController: UIViewController {
     override func viewDidLoad() {
         rootView.mainContentView.delegate = self
         rootView.mainContentView.dataSource = self
+        
+        addChild(segmentVC)
+        view.addSubview(segmentVC.view)
+        segmentVC.didMove(toParent: self)
+        
+        segmentVC.view.snp.makeConstraints {
+            $0.top.equalTo(self.view.safeAreaLayoutGuide)
+            $0.horizontalEdges.equalToSuperview()
+            $0.height.equalTo(80)
+        }
     }
 }
 

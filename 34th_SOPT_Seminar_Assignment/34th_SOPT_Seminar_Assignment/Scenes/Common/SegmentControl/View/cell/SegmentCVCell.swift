@@ -22,6 +22,7 @@ final class SegmentCVCell: UICollectionViewCell {
     
     // MARK: Views
     private let segmentLabel = UILabel()
+    private let underlineView = UIView()
     
     // MARK: cell init
     override init(frame: CGRect) {
@@ -48,22 +49,28 @@ final class SegmentCVCell: UICollectionViewCell {
     
     // MARK: setUpStyle
     private func setUpStyle() {
+        guard let segment = segment else { return }
+        
         segmentLabel.do {
             let attrStr = NSAttributedString(
-                string: segment?.rawValue ?? "",
+                string: segment.rawValue,
                 attributes: [
                     .font : UIFont.pretendard(.w400, size: 17),
                     .foregroundColor : UIColor.white,
-                    .underlineStyle : self.isSelected ? NSUnderlineStyle.thick : [],
-                    .kern : 5.0
                   ])
             $0.attributedText = attrStr
+        }
+        
+        underlineView.do {
+            $0.backgroundColor = .white
+            $0.isHidden = !self.isSelected
         }
     }
     
     // MARK: setUpLayout
     private func setUpLayout() {
         [
+            underlineView,
             segmentLabel
         ].forEach { self.contentView.addSubview($0) }
     }
@@ -72,6 +79,13 @@ final class SegmentCVCell: UICollectionViewCell {
     private func setUpConstraint() {
         segmentLabel.snp.makeConstraints {
             $0.center.equalToSuperview()
+        }
+        
+        underlineView.snp.makeConstraints {
+            $0.width.equalTo(segmentLabel)
+            $0.height.equalTo(2)
+            $0.top.equalTo(segmentLabel.snp.bottom).offset(5)
+            $0.centerX.equalTo(segmentLabel)
         }
     }
         

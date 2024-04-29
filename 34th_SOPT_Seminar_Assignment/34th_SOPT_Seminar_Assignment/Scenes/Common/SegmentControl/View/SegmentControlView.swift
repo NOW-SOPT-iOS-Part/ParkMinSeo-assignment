@@ -13,13 +13,13 @@ final class SegmentControlView: UICollectionView {
     
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
         super.init(frame: frame, collectionViewLayout: UICollectionViewFlowLayout().then {
-            $0.itemSize = CGSize(width: 100, height: 150)
+            $0.itemSize = CGSize(width: 100, height: 50)
             $0.minimumLineSpacing = 8
             $0.minimumInteritemSpacing = 10
             $0.scrollDirection = .horizontal
         })
         registerCells()
-        self.backgroundColor = .black
+        self.backgroundColor = .clear
     }
     
     required init?(coder: NSCoder) {

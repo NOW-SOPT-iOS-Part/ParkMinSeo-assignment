@@ -14,23 +14,6 @@ final class HomeView: UIView {
     // MARK: Properties
     
     // MARK: Views
-    // MARK: This is for test
-    private let aboveView = UIView()
-    private let topBarView = UIView()
-    let upperTabBar = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout().then {
-        $0.itemSize = CGSize(width: 100, height: 150)
-        $0.minimumLineSpacing = 8
-        $0.minimumInteritemSpacing = 10
-        $0.scrollDirection = .horizontal
-    })
-    
-    let mainCarouselView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout().then {
-        $0.itemSize = CGSize(width: 100, height: 150)
-        $0.minimumLineSpacing = 8
-        $0.minimumInteritemSpacing = 10
-        $0.scrollDirection = .horizontal
-    })
-    
     let mainContentView = MainCollectionView()
     
     // MARK: init
@@ -54,23 +37,12 @@ final class HomeView: UIView {
     private func setUpStyle() {
         // MARK: this is for test
         self.backgroundColor = .black
-        topBarView.backgroundColor = .gray
-        upperTabBar.backgroundColor = .blue
-        mainCarouselView.backgroundColor = .clear
         mainContentView.backgroundColor = .clear
     }
     
     // MARK: setUpLayout
     private func setUpLayout() {
         [
-            topBarView,
-            //            upperTabBar
-        ].forEach { self.aboveView.addSubview($0) }
-        
-        
-        [
-            //            aboveView,
-            //            mainCarouselView,
             mainContentView
         ].forEach { self.addSubview($0) }
     }
