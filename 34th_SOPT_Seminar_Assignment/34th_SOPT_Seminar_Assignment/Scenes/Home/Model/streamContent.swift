@@ -11,6 +11,10 @@ import Foundation
 struct streamContent {
     /// 컨텐츠 ID
     let contentID: Int
+    /// 이미지
+    let image: String
+    /// 현재 순위
+    let rank: Int
     /// 방송사 이름
     let broadcastingCompany: String
     /// 컨텐츠 이름
