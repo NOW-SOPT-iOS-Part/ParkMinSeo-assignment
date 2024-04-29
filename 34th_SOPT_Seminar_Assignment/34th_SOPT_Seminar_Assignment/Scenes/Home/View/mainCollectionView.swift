@@ -46,7 +46,7 @@ extension mainCollectionView {
     private func createLayout() -> UICollectionViewCompositionalLayout {
         let config = UICollectionViewCompositionalLayoutConfiguration()
         config.scrollDirection = .vertical
-        config.interSectionSpacing = 1
+        config.interSectionSpacing = 10
         
         return UICollectionViewCompositionalLayout(sectionProvider: { [weak self] sectionIndex, _ in
             switch mainCVSection.allCases[sectionIndex] {
@@ -123,6 +123,7 @@ extension mainCollectionView {
         
         // section
         let section = NSCollectionLayoutSection(group: group)
+        section.contentInsets = .init(top: 15, leading: 0, bottom: 15, trailing: 0)
         return section
     }
 }
