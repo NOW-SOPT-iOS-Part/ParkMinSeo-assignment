@@ -10,10 +10,10 @@ import SnapKit
 import Then
 
 
-class streamContentCVCell: UICollectionViewCell {
+class StreamContentCVCell: UICollectionViewCell {
     
     // MARK: Properties
-    private var cellContent: streamContent = streamContent(contentID: -1, image: "contentImage1", rank: 1, broadcastingCompany: "Def", title: "Def", viewerShip: 00.00)
+    private var cellContent: StreamContent = StreamContent(contentID: -1, image: "contentImage1", rank: 1, broadcastingCompany: "Def", title: "Def", viewerShip: 00.00)
     
     // MARK: Views
     /// 컨텐츠 이미지
@@ -151,14 +151,14 @@ class streamContentCVCell: UICollectionViewCell {
 }
 
 // MARK: interface function
-extension streamContentCVCell {
+extension StreamContentCVCell {
     
-    func fetchData(_ data: streamContent) {
+    func fetchData(_ data: StreamContent) {
         self.cellContent = data
         setUpStyle()
     }
 }
 
 #Preview {
-    streamContentCVCell()
+    StreamContentCVCell()
 }

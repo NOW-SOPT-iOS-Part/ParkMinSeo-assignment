@@ -7,13 +7,13 @@
 
 import UIKit
 
-final class appTabBarController: UITabBarController {
+final class AppTabBarController: UITabBarController {
     
     // MARK: Life Cycle - viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
        
-        let tabOne = UINavigationController(rootViewController: homeViewController())
+        let tabOne = UINavigationController(rootViewController: HomeViewController())
         tabOne.tabBarItem = UITabBarItem(
             title: "홈",
             image: UIImage.icHome,

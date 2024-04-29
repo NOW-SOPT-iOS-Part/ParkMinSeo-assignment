@@ -1,5 +1,5 @@
 //
-//  normalContentCVCell.swift
+//  adContentCVCell.swift
 //  34th_SOPT_Seminar_Assignment
 //
 //  Created by 박민서 on 4/29/24.
@@ -10,18 +10,14 @@ import SnapKit
 import Then
 
 
-class normalContentCVCell: UICollectionViewCell {
+class AdContentCVCell: UICollectionViewCell {
     
     // MARK: Properties
-    private var cellContent: normalContent = normalContent()
-    
-    // MARK: ?? CollecitonViewCell은 reusable인데 lazy var가 의미가 있는가? let과의 뷰 점유 차이량은??
+    private var cellContent: AdContent = AdContent(contentId: -1, image: "longTabImage1")
     
     // MARK: Views
     /// 컨텐츠 이미지
     private let contentImageView = UIImageView()
-    /// 컨텐츠 타이틀
-    private let contentTitle = UILabel()
     
     // MARK: cell init
     override init(frame: CGRect) {
@@ -50,56 +46,35 @@ class normalContentCVCell: UICollectionViewCell {
     private func setUpStyle() {
         contentImageView.do {
             $0.image = UIImage(named: cellContent.image)
-            $0.contentMode = .scaleAspectFill
+            $0.contentMode = .scaleAspectFit
             $0.cornerRounding(3)
-        }
-        
-        contentTitle.do {
-            let attrStr = NSAttributedString(
-                string: cellContent.title,
-                attributes: [
-                    .font : UIFont.pretendard(.w500, size: 10),
-                    .foregroundColor : UIColor.grayScale(.r156)
-                  ])
-            $0.attributedText = attrStr
         }
     }
     
     // MARK: setUpLayout
     private func setUpLayout() {
         [
-            contentImageView,
-            contentTitle
+            contentImageView
         ].forEach { self.contentView.addSubview($0) }
     }
     
     // MARK: setUpConstraint
     private func setUpConstraint() {
-        
-        contentTitle.snp.makeConstraints {
-            $0.bottom.equalToSuperview().offset(-3)
-            $0.leading.equalToSuperview()
-            $0.trailing.equalToSuperview().priority(.low)
-        }
-        
         contentImageView.snp.makeConstraints {
-            $0.top.equalToSuperview()
-            $0.horizontalEdges.equalToSuperview()
-            $0.bottom.equalTo(contentTitle.snp.top).offset(-3)
+            $0.edges.equalToSuperview()
         }
     }
         
 }
 
 // MARK: interface function
-extension normalContentCVCell {
-    
-    func fetchData(_ data: normalContent) {
+extension AdContentCVCell {
+    func fetchData(_ data: AdContent) {
         self.cellContent = data
         setUpStyle()
     }
 }
 
 #Preview {
-    normalContentCVCell()
+    AdContentCVCell()
 }

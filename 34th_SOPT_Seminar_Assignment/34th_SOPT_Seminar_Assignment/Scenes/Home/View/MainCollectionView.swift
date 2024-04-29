@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class mainCollectionView: UICollectionView {
+final class MainCollectionView: UICollectionView {
     
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
         super.init(frame: frame, collectionViewLayout: UICollectionViewLayout.init())
@@ -25,14 +25,14 @@ final class mainCollectionView: UICollectionView {
             forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
             withReuseIdentifier: HeaderView.className
         )
-        self.register(normalContentCVCell.self, forCellWithReuseIdentifier: normalContentCVCell.className)
-        self.register(streamContentCVCell.self, forCellWithReuseIdentifier: streamContentCVCell.className)
-        self.register(adContentCVCell.self, forCellWithReuseIdentifier: adContentCVCell.className)
+        self.register(NormalContentCVCell.self, forCellWithReuseIdentifier: NormalContentCVCell.className)
+        self.register(StreamContentCVCell.self, forCellWithReuseIdentifier: StreamContentCVCell.className)
+        self.register(AdContentCVCell.self, forCellWithReuseIdentifier: AdContentCVCell.className)
     }
 }
 
 // MARK: UICollecitonView Compositional Layout
-extension mainCollectionView {
+extension MainCollectionView {
     
     // MARK: Section Layout을 포함한 Compositional Layout return
     private func createLayout() -> UICollectionViewCompositionalLayout {
@@ -41,7 +41,7 @@ extension mainCollectionView {
         config.interSectionSpacing = 10
         
         return UICollectionViewCompositionalLayout(sectionProvider: { [weak self] sectionIndex, _ in
-            switch mainCVSection.allCases[sectionIndex] {
+            switch MainCVSection.allCases[sectionIndex] {
                 
             case .recommend:
                 return (self?.createNormalContentSection())!

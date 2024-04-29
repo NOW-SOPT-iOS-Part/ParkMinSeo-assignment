@@ -8,7 +8,7 @@
 import Foundation
 
 /// 광고 콘텐츠 셀에 사용되는 모델입니다.
-struct adContent {
+struct AdContent {
     /// 컨텐츠 ID
     let contentId: Int
     /// 이미지

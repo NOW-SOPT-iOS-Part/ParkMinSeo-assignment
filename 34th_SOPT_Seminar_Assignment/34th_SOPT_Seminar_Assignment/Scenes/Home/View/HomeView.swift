@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 import Then
 
-final class homeView: UIView {
+final class HomeView: UIView {
     
     // MARK: Properties
     
@@ -31,7 +31,7 @@ final class homeView: UIView {
         $0.scrollDirection = .horizontal
     })
     
-    let mainContentView = mainCollectionView()
+    let mainContentView = MainCollectionView()
     
     // MARK: init
     override init(frame: CGRect) {

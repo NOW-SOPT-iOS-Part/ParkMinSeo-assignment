@@ -1,5 +1,5 @@
 //
-//  headerView.swift
+//  HeaderView.swift
 //  34th_SOPT_Seminar_Assignment
 //
 //  Created by 박민서 on 4/30/24.
@@ -12,7 +12,7 @@ import Then
 final class HeaderView: UICollectionReusableView {
     
     // MARK: Properties
-    private var cellContent: headerContent = headerContent(
+    private var cellContent: HeaderContent = HeaderContent(
         labelTitle: "defaultLabel",
         buttonWithAction: UIAction(
             title: "defaultBtn"
@@ -102,7 +102,7 @@ final class HeaderView: UICollectionReusableView {
 
 // MARK: interface function
 extension HeaderView {
-    func fetchData(_ data: headerContent) {
+    func fetchData(_ data: HeaderContent) {
         self.cellContent = data
         setUpStyle()
     }

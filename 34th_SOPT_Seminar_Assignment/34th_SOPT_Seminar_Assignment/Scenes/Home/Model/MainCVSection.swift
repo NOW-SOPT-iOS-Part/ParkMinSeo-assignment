@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum mainCVSection: Hashable, CaseIterable {
+enum MainCVSection: Hashable, CaseIterable {
     case recommend // 티빙 추천 콘텐츠 섹션
     case stream // 라이브 섹션
     case event // 1화 무료 이벤트 섹션

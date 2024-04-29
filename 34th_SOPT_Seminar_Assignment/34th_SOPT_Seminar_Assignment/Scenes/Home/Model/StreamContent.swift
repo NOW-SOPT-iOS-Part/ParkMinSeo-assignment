@@ -8,7 +8,7 @@
 import Foundation
 
 /// LIVE 콘텐츠 셀에 사용되는 모델입니다.
-struct streamContent {
+struct StreamContent {
     /// 컨텐츠 ID
     let contentID: Int
     /// 이미지

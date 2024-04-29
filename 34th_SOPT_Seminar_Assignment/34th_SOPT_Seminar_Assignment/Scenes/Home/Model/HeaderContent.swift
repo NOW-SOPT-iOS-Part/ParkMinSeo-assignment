@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-struct headerContent {
+struct HeaderContent {
     let labelTitle: String
     let buttonWithAction: UIAction
 }

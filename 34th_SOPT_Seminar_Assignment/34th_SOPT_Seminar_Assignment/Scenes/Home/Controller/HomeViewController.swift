@@ -7,10 +7,10 @@
 
 import UIKit
 
-final class homeViewController: UIViewController {
+final class HomeViewController: UIViewController {
     
     // MARK: View
-    private let rootView = homeView()
+    private let rootView = HomeView()
         
     // MARK: Life Cycle - loadView
     override func loadView() {
@@ -25,13 +25,13 @@ final class homeViewController: UIViewController {
 }
 
 // MARK: UICollectionViewDelegate
-extension homeViewController: UICollectionViewDelegate {
+extension HomeViewController: UICollectionViewDelegate {
     // MARK: 별도의 DiffableDataSource 없이 Header 등록 시 필요합니다
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HeaderView.className, for: indexPath) as? HeaderView else { return UICollectionReusableView() }
         
-        let headerData: headerContent = {
-            switch mainCVSection.allCases[indexPath.section] {
+        let headerData: HeaderContent = {
+            switch MainCVSection.allCases[indexPath.section] {
                 
             case .recommend:
                 return .init(labelTitle: "티빙에서 꼭 봐야하는 콘텐츠", buttonWithAction: UIAction(title:"전체보기") {_ in })
@@ -52,14 +52,14 @@ extension homeViewController: UICollectionViewDelegate {
 }
 
 // MARK: UICollectionViewDataSource
-extension homeViewController: UICollectionViewDataSource {
+extension HomeViewController: UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 5
     }
         
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        switch mainCVSection.allCases[section] {
+        switch MainCVSection.allCases[section] {
             
         case .recommend, .event, .fantastic, .stream:
             return 4
@@ -70,18 +70,18 @@ extension homeViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        switch mainCVSection.allCases[indexPath.section] {
+        switch MainCVSection.allCases[indexPath.section] {
             
         case .recommend, .event, .fantastic:
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: normalContentCVCell.className, for: indexPath) as? normalContentCVCell else { return UICollectionViewCell() }
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NormalContentCVCell.className, for: indexPath) as? NormalContentCVCell else { return UICollectionViewCell() }
             cell.fetchData(.init())
             return cell
         case .stream:
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: streamContentCVCell.className, for: indexPath) as? streamContentCVCell else { return UICollectionViewCell() }
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: StreamContentCVCell.className, for: indexPath) as? StreamContentCVCell else { return UICollectionViewCell() }
             cell.fetchData(.init(contentID: -1, image: "contentImage2", rank: 0, broadcastingCompany: "Asdf", title: "Asdf", viewerShip: 00.00))
             return cell
         case .ads:
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: adContentCVCell.className, for: indexPath) as? adContentCVCell else { return UICollectionViewCell() }
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AdContentCVCell.className, for: indexPath) as? AdContentCVCell else { return UICollectionViewCell() }
             cell.fetchData(.init(contentId: -1, image: "longTabImage1"))
             return cell
         }
