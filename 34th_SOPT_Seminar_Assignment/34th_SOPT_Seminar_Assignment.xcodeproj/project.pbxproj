@@ -25,6 +25,7 @@
 		889213E42BE02AE5007C8849 /* SegmentControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889213E32BE02AE5007C8849 /* SegmentControlView.swift */; };
 		889213E62BE02B0C007C8849 /* Segments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889213E52BE02B0C007C8849 /* Segments.swift */; };
 		889213E92BE02D94007C8849 /* SegmentCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889213E82BE02D94007C8849 /* SegmentCVCell.swift */; };
+		889213EB2BE03C4E007C8849 /* topView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889213EA2BE03C4E007C8849 /* topView.swift */; };
 		88A8942A2BCE644400AEC0A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A894292BCE644400AEC0A0 /* AppDelegate.swift */; };
 		88A8942C2BCE644400AEC0A0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A8942B2BCE644400AEC0A0 /* SceneDelegate.swift */; };
 		88A8942E2BCE644400AEC0A0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A8942D2BCE644400AEC0A0 /* ViewController.swift */; };
@@ -72,6 +73,7 @@
 		889213E32BE02AE5007C8849 /* SegmentControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentControlView.swift; sourceTree = "<group>"; };
 		889213E52BE02B0C007C8849 /* Segments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Segments.swift; sourceTree = "<group>"; };
 		889213E82BE02D94007C8849 /* SegmentCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentCVCell.swift; sourceTree = "<group>"; };
+		889213EA2BE03C4E007C8849 /* topView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = topView.swift; sourceTree = "<group>"; };
 		88A894262BCE644400AEC0A0 /* 34th_SOPT_Seminar_Assignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 34th_SOPT_Seminar_Assignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88A894292BCE644400AEC0A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		88A8942B2BCE644400AEC0A0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 				884AE98B2BDF7AC5000F7F8C /* cell */,
 				884AE9922BDF7B9F000F7F8C /* HomeView.swift */,
 				884AE9A12BDF9D70000F7F8C /* MainCollectionView.swift */,
+				889213EA2BE03C4E007C8849 /* topView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -414,6 +417,7 @@
 				88A8942E2BCE644400AEC0A0 /* ViewController.swift in Sources */,
 				884AE9932BDF7B9F000F7F8C /* HomeView.swift in Sources */,
 				884AE9982BDF7CF7000F7F8C /* NormalContent.swift in Sources */,
+				889213EB2BE03C4E007C8849 /* topView.swift in Sources */,
 				889213E42BE02AE5007C8849 /* SegmentControlView.swift in Sources */,
 				889213E92BE02D94007C8849 /* SegmentCVCell.swift in Sources */,
 				884AE98F2BDF7B5D000F7F8C /* NormalContentCVCell.swift in Sources */,

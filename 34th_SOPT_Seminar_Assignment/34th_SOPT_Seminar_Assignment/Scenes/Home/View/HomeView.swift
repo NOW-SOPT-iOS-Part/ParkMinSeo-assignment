@@ -50,7 +50,7 @@ final class HomeView: UIView {
     // MARK: setUpConstraint
     private func setUpConstraint() {
         mainContentView.snp.makeConstraints {
-            $0.edges.equalToSuperview()
+            $0.edges.equalTo(self.safeAreaLayoutGuide)
         }
     }
 }

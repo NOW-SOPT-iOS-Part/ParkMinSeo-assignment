@@ -20,6 +20,7 @@ final class SegmentControlView: UICollectionView {
         })
         registerCells()
         self.backgroundColor = .clear
+        self.showsHorizontalScrollIndicator = false
     }
     
     required init?(coder: NSCoder) {

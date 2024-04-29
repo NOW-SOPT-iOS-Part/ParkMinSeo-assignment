@@ -12,6 +12,7 @@ final class HomeViewController: UIViewController {
     
     // MARK: View
     private let rootView = HomeView()
+    private let topAboveView = topView()
     private let segmentVC = SegmentControlViewController()
         
     // MARK: Life Cycle - loadView
@@ -24,14 +25,21 @@ final class HomeViewController: UIViewController {
         rootView.mainContentView.delegate = self
         rootView.mainContentView.dataSource = self
         
+        view.addSubview(topAboveView)
+        topAboveView.snp.makeConstraints {
+            $0.top.equalTo(self.view.safeAreaLayoutGuide)
+            $0.horizontalEdges.equalToSuperview()
+            $0.height.equalTo(40)
+        }
+        
         addChild(segmentVC)
         view.addSubview(segmentVC.view)
         segmentVC.didMove(toParent: self)
         
         segmentVC.view.snp.makeConstraints {
-            $0.top.equalTo(self.view.safeAreaLayoutGuide)
+            $0.top.equalTo(topAboveView.snp.bottom)
             $0.horizontalEdges.equalToSuperview()
-            $0.height.equalTo(80)
+            $0.height.equalTo(50)
         }
     }
 }
