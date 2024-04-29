@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum Segments: String {
+enum Segments: String, Hashable, CaseIterable {
     case home = "홈"
     case live = "실시간"
     case tv = "TV프로그램"

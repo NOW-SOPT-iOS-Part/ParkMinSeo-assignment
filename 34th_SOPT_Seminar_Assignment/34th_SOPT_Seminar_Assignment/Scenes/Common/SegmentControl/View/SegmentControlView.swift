@@ -9,6 +9,24 @@ import UIKit
 import SnapKit
 import Then
 
-final class SegmentControlView: UIView {
+final class SegmentControlView: UICollectionView {
     
+    override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
+        super.init(frame: frame, collectionViewLayout: UICollectionViewFlowLayout().then {
+            $0.itemSize = CGSize(width: 100, height: 150)
+            $0.minimumLineSpacing = 8
+            $0.minimumInteritemSpacing = 10
+            $0.scrollDirection = .horizontal
+        })
+        registerCells()
+        self.backgroundColor = .black
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func registerCells() {
+        self.register(SegmentCVCell.self, forCellWithReuseIdentifier: SegmentCVCell.className)
+    }
 }
