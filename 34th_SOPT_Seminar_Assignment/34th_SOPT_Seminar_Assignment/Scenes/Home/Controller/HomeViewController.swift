@@ -18,6 +18,7 @@ final class HomeViewController: UIViewController {
     private let rootView = HomeView()
     private let topAboveView = topView()
     private let segmentVC = SegmentControlViewController()
+    private let carouselVC = CarouselViewController()
         
     // MARK: Life Cycle - loadView
     override func loadView() {
@@ -29,6 +30,15 @@ final class HomeViewController: UIViewController {
         rootView.mainContentView.delegate = self
         rootView.mainContentView.dataSource = self
         
+        addChild(carouselVC)
+        view.addSubview(carouselVC.view)
+        carouselVC.didMove(toParent: self)
+        
+        carouselVC.view.snp.makeConstraints {
+            $0.top.equalTo(self.view.safeAreaLayoutGuide)
+            $0.horizontalEdges.equalToSuperview()
+            $0.height.equalTo(550)
+        }
         view.addSubview(topAboveView)
         topAboveView.snp.makeConstraints {
             $0.top.equalTo(self.view.safeAreaLayoutGuide)
