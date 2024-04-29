@@ -68,7 +68,7 @@ final class HeaderView: UICollectionReusableView {
         
         rightButton.do {
             let attrStr = NSAttributedString(
-                string: cellContent.labelTitle,
+                string: cellContent.buttonWithAction.title,
                 attributes: [
                     .font : UIFont.pretendard(.w500, size: 11),
                     .foregroundColor : UIColor.grayScale(.r156),
@@ -103,4 +103,12 @@ final class HeaderView: UICollectionReusableView {
         }
     }
     
+}
+
+// MARK: interface function
+extension HeaderView {
+    func fetchData(_ data: headerContent) {
+        self.cellContent = data
+        setUpStyle()
+    }
 }
