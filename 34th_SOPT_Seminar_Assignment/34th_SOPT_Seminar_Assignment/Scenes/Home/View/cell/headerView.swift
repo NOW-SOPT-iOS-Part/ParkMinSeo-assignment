@@ -9,11 +9,6 @@ import UIKit
 import SnapKit
 import Then
 
-struct headerContent {
-    let labelTitle: String
-    let buttonWithAction: UIAction
-}
-
 final class HeaderView: UICollectionReusableView {
     
     // MARK: Properties
