@@ -19,24 +19,50 @@ final class homeViewController: UIViewController {
     
     // MARK: Life Cycle - viewDidLoad
     override func viewDidLoad() {
-        rootView.mainCollectionView.delegate = self
-        rootView.mainCollectionView.dataSource = self
+        rootView.mainContentView.delegate = self
+        rootView.mainContentView.dataSource = self
     }
 }
 
+// MARK: UICollectionViewDelegate
 extension homeViewController: UICollectionViewDelegate {
     
 }
 
+// MARK: UICollectionViewDataSource
 extension homeViewController: UICollectionViewDataSource {
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 5
+    }
+        
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 30
+        switch mainCVSection.allCases[section] {
+            
+        case .recommend, .event, .fantastic, .stream:
+            return 4
+        case .ads:
+            return 1
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: normalContentCVCell.className, for: indexPath) as? normalContentCVCell else { return UICollectionViewCell() }
-        cell.fetchData(.init())
-        return cell
+     
+        switch mainCVSection.allCases[indexPath.section] {
+            
+        case .recommend, .event, .fantastic:
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: normalContentCVCell.className, for: indexPath) as? normalContentCVCell else { return UICollectionViewCell() }
+            cell.fetchData(.init())
+            return cell
+        case .stream:
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: streamContentCVCell.className, for: indexPath) as? streamContentCVCell else { return UICollectionViewCell() }
+            cell.fetchData(.init(contentID: -1, image: "contentImage2", rank: 0, broadcastingCompany: "Asdf", title: "Asdf", viewerShip: 00.00))
+            return cell
+        case .ads:
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: adContentCVCell.className, for: indexPath) as? adContentCVCell else { return UICollectionViewCell() }
+            cell.fetchData(.init(contentId: -1, image: "longTabImage1"))
+            return cell
+        }
     }
     
     
