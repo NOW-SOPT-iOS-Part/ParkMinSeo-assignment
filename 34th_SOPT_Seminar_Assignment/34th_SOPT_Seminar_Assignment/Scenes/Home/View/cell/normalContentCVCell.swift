@@ -39,8 +39,7 @@ class normalContentCVCell: UICollectionViewCell {
     // MARK: prepareForReuse
     override func prepareForReuse() {
         super.prepareForReuse()
-        contentImageView.image = nil
-        contentTitle.text = nil
+        setUpStyle()
     }
     
     // MARK: setUpView
