@@ -9,13 +9,16 @@ import UIKit
 
 final class SegmentControlViewController: UIViewController {
     
+    // MARK: View
     private let segmentControlView = SegmentControlView()
     
+    // MARK: Life Cycle - loadView
     override func loadView() {
         super.loadView()
         self.view = segmentControlView
     }
     
+    // MARK: Life Cycle - viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         segmentControlView.delegate = self
@@ -23,12 +26,14 @@ final class SegmentControlViewController: UIViewController {
     }
 }
 
+// MARK: UICollectionViewDelegate
 extension SegmentControlViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print(Segments.allCases[indexPath.row].rawValue)
     }
 }
 
+// MARK: UICollectionViewDataSource
 extension SegmentControlViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return Segments.allCases.count

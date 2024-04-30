@@ -11,6 +11,7 @@ import Then
 
 final class SegmentControlView: UICollectionView {
     
+    // MARK: view init
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
         super.init(frame: frame, collectionViewLayout: UICollectionViewFlowLayout().then {
             $0.itemSize = CGSize(width: 100, height: 50)
@@ -27,6 +28,7 @@ final class SegmentControlView: UICollectionView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: private func
     private func registerCells() {
         self.register(SegmentCVCell.self, forCellWithReuseIdentifier: SegmentCVCell.className)
     }

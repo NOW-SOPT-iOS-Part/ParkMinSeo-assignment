@@ -8,6 +8,7 @@
 import UIKit
 
 final class CarouselViewController: UIViewController {
+    
     // MARK: Properties
     private let images = ["contentImage1","contentImage2","contentImage3","contentImage4"]
     private var currentPage = 0
@@ -84,6 +85,7 @@ final class CarouselViewController: UIViewController {
 
 }
 
+// MARK: UICollectionViewDelegate
 extension CarouselViewController: UICollectionViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         currentPage = Int(scrollView.contentOffset.x / scrollView.frame.width)
@@ -91,6 +93,7 @@ extension CarouselViewController: UICollectionViewDelegate {
     }
 }
 
+// MARK: UICollectionViewDataSource
 extension CarouselViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.images.count

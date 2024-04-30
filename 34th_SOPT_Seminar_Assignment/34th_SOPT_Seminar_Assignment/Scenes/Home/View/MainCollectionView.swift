@@ -9,6 +9,7 @@ import UIKit
 
 final class MainCollectionView: UICollectionView {
     
+    // MARK: view init
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
         super.init(frame: frame, collectionViewLayout: UICollectionViewLayout.init())
         self.collectionViewLayout = self.createLayout()
@@ -19,6 +20,7 @@ final class MainCollectionView: UICollectionView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: private func
     private func registerCells() {
         self.register(
             HeaderView.self,

@@ -9,9 +9,11 @@ import UIKit
 
 final class topView: UIView {
     
+    // MARK: Views
     private let tvingImageView = UIImageView(image: .tving)
     private let profileIamgeView = UIImageView(image: .icDoosan)
     
+    // MARK: view init
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupGradient()
@@ -23,7 +25,7 @@ final class topView: UIView {
         super.init(coder: aDecoder)
     }
     
-    
+    // MARK: layoutSubviews
     override func layoutSubviews() {
         super.layoutSubviews()
         if let gradientLayer = layer.sublayers?.first as? CAGradientLayer {

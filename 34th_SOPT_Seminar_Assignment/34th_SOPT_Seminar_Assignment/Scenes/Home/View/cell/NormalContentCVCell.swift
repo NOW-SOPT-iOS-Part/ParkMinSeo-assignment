@@ -15,8 +15,6 @@ class NormalContentCVCell: UICollectionViewCell {
     // MARK: Properties
     private var cellContent: NormalContent?
     
-    // MARK: ?? CollecitonViewCell은 reusable인데 lazy var가 의미가 있는가? let과의 뷰 점유 차이량은??
-    
     // MARK: Views
     /// 컨텐츠 이미지
     private let contentImageView = UIImageView()
