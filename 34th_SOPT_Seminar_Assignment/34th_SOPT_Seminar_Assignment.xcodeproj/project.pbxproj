@@ -231,6 +231,25 @@
 			path = cell;
 			sourceTree = "<group>";
 		};
+		889213F62BE12117007C8849 /* 2nd */ = {
+			isa = PBXGroup;
+			children = (
+				88A8942D2BCE644400AEC0A0 /* ViewController.swift */,
+				88A8945C2BCE738200AEC0A0 /* LoginViewController.swift */,
+				88A894672BCEE2FA00AEC0A0 /* WelcomeViewController.swift */,
+				88A894692BCEE90100AEC0A0 /* NicknameBottomSheetViewController.swift */,
+			);
+			path = 2nd;
+			sourceTree = "<group>";
+		};
+		889213F72BE12127007C8849 /* 3rd */ = {
+			isa = PBXGroup;
+			children = (
+				884AE9872BDF73D5000F7F8C /* Scenes */,
+			);
+			path = 3rd;
+			sourceTree = "<group>";
+		};
 		88A8941D2BCE644400AEC0A0 = {
 			isa = PBXGroup;
 			children = (
@@ -250,15 +269,12 @@
 		88A894282BCE644400AEC0A0 /* 34th_SOPT_Seminar_Assignment */ = {
 			isa = PBXGroup;
 			children = (
-				884AE9872BDF73D5000F7F8C /* Scenes */,
+				889213F72BE12127007C8849 /* 3rd */,
+				889213F62BE12117007C8849 /* 2nd */,
 				88A894622BCEA0F500AEC0A0 /* Component */,
 				88A894432BCE690300AEC0A0 /* Common */,
 				88A894292BCE644400AEC0A0 /* AppDelegate.swift */,
 				88A8942B2BCE644400AEC0A0 /* SceneDelegate.swift */,
-				88A8942D2BCE644400AEC0A0 /* ViewController.swift */,
-				88A8945C2BCE738200AEC0A0 /* LoginViewController.swift */,
-				88A894672BCEE2FA00AEC0A0 /* WelcomeViewController.swift */,
-				88A894692BCEE90100AEC0A0 /* NicknameBottomSheetViewController.swift */,
 				88A8942F2BCE644400AEC0A0 /* Main.storyboard */,
 				88A894322BCE644600AEC0A0 /* Assets.xcassets */,
 				88A894342BCE644600AEC0A0 /* LaunchScreen.storyboard */,
