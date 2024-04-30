@@ -23,6 +23,7 @@ final class SegmentControlViewController: UIViewController {
         super.viewDidLoad()
         segmentControlView.delegate = self
         segmentControlView.dataSource = self
+        segmentControlView.selectItem(at: .init(item: 0, section: 0), animated: false, scrollPosition: .centeredHorizontally)
     }
 }
 

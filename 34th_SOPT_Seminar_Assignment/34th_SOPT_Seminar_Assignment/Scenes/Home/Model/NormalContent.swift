@@ -23,7 +23,7 @@ extension NormalContent {
             NormalContent(contentId: 1, image: "contentImage1", title: "시그널"),
             NormalContent(contentId: 2, image: "contentImage2", title: "해리포터와 마법사의 돌"),
             NormalContent(contentId: 3, image: "contentImage3", title: "반지의 제왕"),
-            NormalContent(contentId: 4, image: "contentImage4", title: "스즈메의.."),
+            NormalContent(contentId: 4, image: "contentImage4", title: "스즈메의 문단속"),
         ]
     }
 }

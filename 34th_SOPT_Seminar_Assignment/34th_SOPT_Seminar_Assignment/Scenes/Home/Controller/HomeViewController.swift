@@ -30,15 +30,6 @@ final class HomeViewController: UIViewController {
         rootView.mainContentView.delegate = self
         rootView.mainContentView.dataSource = self
         
-        addChild(carouselVC)
-        view.addSubview(carouselVC.view)
-        carouselVC.didMove(toParent: self)
-        
-        carouselVC.view.snp.makeConstraints {
-            $0.top.equalTo(self.view.safeAreaLayoutGuide)
-            $0.horizontalEdges.equalToSuperview()
-            $0.height.equalTo(550)
-        }
         view.addSubview(topAboveView)
         topAboveView.snp.makeConstraints {
             $0.top.equalTo(self.view.safeAreaLayoutGuide)
@@ -62,7 +53,9 @@ final class HomeViewController: UIViewController {
 extension HomeViewController: UICollectionViewDelegate {
     // MARK: 별도의 DiffableDataSource 없이 Header 등록 시 필요합니다
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HeaderView.className, for: indexPath) as? HeaderView else { return UICollectionReusableView() }
+        guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HeaderView.className, for: indexPath) as? HeaderView, 
+                MainCVSection.allCases[indexPath.section] != .topCarousel
+        else { return UICollectionReusableView() }
         
         let headerData: HeaderContent = {
             switch MainCVSection.allCases[indexPath.section] {
@@ -77,6 +70,8 @@ extension HomeViewController: UICollectionViewDelegate {
                 return .init(labelTitle: "", buttonWithAction: .init(handler: {_ in }))
             case .fantastic:
                 return .init(labelTitle: "마술보다 더 신비로운 영화(신비로운 영화사전님)", buttonWithAction: UIAction(title:"전체보기") {_ in })
+            case .topCarousel:
+                return .init(labelTitle: "", buttonWithAction: .init(handler: {_ in}))
             }
         }()
         
@@ -89,12 +84,13 @@ extension HomeViewController: UICollectionViewDelegate {
 extension HomeViewController: UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 5
+        return MainCVSection.allCases.count
     }
         
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch MainCVSection.allCases[section] {
-            
+        case .topCarousel:
+            return 1
         case .recommend, .event, .fantastic, .stream:
             return 4
         case .ads:
@@ -105,7 +101,11 @@ extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         switch MainCVSection.allCases[indexPath.section] {
-            
+        
+        case .topCarousel:
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TopCarouselCVCell.className, for: indexPath) as? TopCarouselCVCell else {
+                return UICollectionViewCell() }
+            return cell
         case .recommend, .event, .fantastic:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NormalContentCVCell.className, for: indexPath) as? NormalContentCVCell else { return UICollectionViewCell() }
             cell.fetchData(normalDummyData[indexPath.row])

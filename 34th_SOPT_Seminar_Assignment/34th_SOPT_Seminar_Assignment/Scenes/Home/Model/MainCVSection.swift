@@ -8,6 +8,7 @@
 import Foundation
 
 enum MainCVSection: Hashable, CaseIterable {
+    case topCarousel // 최상단 캐러셀 섹션
     case recommend // 티빙 추천 콘텐츠 섹션
     case stream // 라이브 섹션
     case event // 1화 무료 이벤트 섹션

@@ -14,7 +14,7 @@ final class SegmentControlView: UICollectionView {
     // MARK: view init
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
         super.init(frame: frame, collectionViewLayout: UICollectionViewFlowLayout().then {
-            $0.itemSize = CGSize(width: 100, height: 50)
+            $0.itemSize = CGSize(width: 80, height: 50)
             $0.minimumLineSpacing = 8
             $0.minimumInteritemSpacing = 10
             $0.scrollDirection = .horizontal
