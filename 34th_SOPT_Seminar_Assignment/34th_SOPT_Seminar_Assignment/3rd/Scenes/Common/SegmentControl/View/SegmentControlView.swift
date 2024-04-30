@@ -19,17 +19,17 @@ final class SegmentControlView: UICollectionView {
             $0.minimumInteritemSpacing = 10
             $0.scrollDirection = .horizontal
         })
-        registerCells()
-        self.backgroundColor = .clear
-        self.showsHorizontalScrollIndicator = false
+        setUpView()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK: private func
-    private func registerCells() {
+    // MARK: setUpView
+    private func setUpView() {
+        self.backgroundColor = .clear
+        self.showsHorizontalScrollIndicator = false
         self.register(SegmentCVCell.self, forCellWithReuseIdentifier: SegmentCVCell.className)
     }
 }

@@ -18,7 +18,6 @@ final class HomeViewController: UIViewController {
     private let rootView = HomeView()
     private let topAboveView = topView()
     private let segmentVC = SegmentControlViewController()
-    private let carouselVC = CarouselViewController()
         
     // MARK: Life Cycle - loadView
     override func loadView() {
@@ -27,19 +26,34 @@ final class HomeViewController: UIViewController {
     
     // MARK: Life Cycle - viewDidLoad
     override func viewDidLoad() {
+        setUpView()
+        setUpLayout()
+        setUpConstraint()
+    }
+    
+    // MARK: setUpView
+    private func setUpView() {
         rootView.mainContentView.delegate = self
         rootView.mainContentView.dataSource = self
-        
-        view.addSubview(topAboveView)
+        addChild(segmentVC)
+        segmentVC.didMove(toParent: self)
+    }
+    
+    // MARK: setUpLayout
+    private func setUpLayout() {
+        [
+            topAboveView,
+            segmentVC.view
+        ].forEach { self.view.addSubview($0) }
+    }
+    
+    // MARK: setUpConstraint
+    private func setUpConstraint() {
         topAboveView.snp.makeConstraints {
             $0.top.equalTo(self.view.safeAreaLayoutGuide)
             $0.horizontalEdges.equalToSuperview()
             $0.height.equalTo(40)
         }
-        
-        addChild(segmentVC)
-        view.addSubview(segmentVC.view)
-        segmentVC.didMove(toParent: self)
         
         segmentVC.view.snp.makeConstraints {
             $0.top.equalTo(topAboveView.snp.bottom)

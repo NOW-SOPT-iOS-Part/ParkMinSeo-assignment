@@ -43,6 +43,7 @@ final class topView: UIView {
         layer.addSublayer(gradientLayer)
     }
     
+    // MARK: setUpLayout
     private func setUpLayout() {
         [
             tvingImageView,
@@ -50,6 +51,7 @@ final class topView: UIView {
         ].forEach { self.addSubview($0) }
     }
     
+    // MARK: setUpConstraint
     private func setUpConstraint() {
         tvingImageView.snp.makeConstraints {
             $0.leading.equalToSuperview().offset(11)

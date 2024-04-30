@@ -79,7 +79,7 @@ final class TopCarouselCVCell: UICollectionViewCell {
         }
     }
     
-    // MARK: pageControl Action
+    // MARK: private func - pageControl Action
     private lazy var pageChangeAction = UIAction { [weak self] action in
         guard let sender = action.sender as? UIPageControl, let self = self else { return }
         let currentPage = sender.currentPage
