@@ -118,6 +118,7 @@ extension MainCollectionView {
         // section
         let section = NSCollectionLayoutSection(group: group)
         section.contentInsets = .init(top: 15, leading: 0, bottom: 15, trailing: 0)
+        section.orthogonalScrollingBehavior = .continuous
         return section
     }
 }

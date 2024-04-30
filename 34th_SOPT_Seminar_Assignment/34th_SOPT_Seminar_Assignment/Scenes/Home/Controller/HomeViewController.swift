@@ -98,7 +98,7 @@ extension HomeViewController: UICollectionViewDataSource {
         case .recommend, .event, .fantastic, .stream:
             return 4
         case .ads:
-            return 1
+            return 2
         }
     }
     
