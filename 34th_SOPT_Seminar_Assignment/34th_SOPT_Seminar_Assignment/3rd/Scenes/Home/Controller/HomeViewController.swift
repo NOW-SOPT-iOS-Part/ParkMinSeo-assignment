@@ -70,24 +70,8 @@ extension HomeViewController: UICollectionViewDelegate {
         guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HeaderView.className, for: indexPath) as? HeaderView, 
                 MainCVSection.allCases[indexPath.section] != .topCarousel
         else { return UICollectionReusableView() }
-        
-        let headerData: HeaderContent = {
-            switch MainCVSection.allCases[indexPath.section] {
                 
-            case .recommend:
-                return .init(labelTitle: "티빙에서 꼭 봐야하는 콘텐츠", buttonWithAction: UIAction(title:"전체보기") {_ in })
-            case .stream:
-                return .init(labelTitle: "인기 LIVE 채널", buttonWithAction: UIAction(title:"전체보기") {_ in })
-            case .event:
-                return .init(labelTitle: "1화 무료! 파라마운트 + 인기 시리즈", buttonWithAction: UIAction(title:"전체보기") {_ in })
-            case .ads:
-                return .init(labelTitle: "", buttonWithAction: .init(handler: {_ in }))
-            case .fantastic:
-                return .init(labelTitle: "마술보다 더 신비로운 영화(신비로운 영화사전님)", buttonWithAction: UIAction(title:"전체보기") {_ in })
-            case .topCarousel:
-                return .init(labelTitle: "", buttonWithAction: .init(handler: {_ in}))
-            }
-        }()
+        let headerData = MainCVSection.allCases[indexPath.section].getHeaderContent()
         
         header.fetchData(headerData)
         return header
