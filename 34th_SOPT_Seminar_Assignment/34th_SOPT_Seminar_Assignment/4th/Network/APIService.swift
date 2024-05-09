@@ -17,6 +17,8 @@ final class APIService<Provider : TargetType> : MoyaProvider<Provider> {
             switch result {
             case .success(let response):
                 do {
+//                    let stringData = String(data: response.data, encoding: .utf8) ?? "" // Data를 String으로 변환 - 디버깅
+//                    print("-----\(stringData)------")
                     try self.validateStatusCode(with: response) // 일종의 Guard라고 생각했습니다..!
                     let decodedData = try JSONDecoder().decode(Model.self, from: response.data)
                     completion(.success(decodedData))

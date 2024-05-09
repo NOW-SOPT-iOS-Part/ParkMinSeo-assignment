@@ -12,6 +12,7 @@ import Then
 final class MoyaViewController: UIViewController {
     
     // MARK: Variables
+    private let movieAPIService = APIService<MovieTargetType>()
     
     // MARK: Views
     private let titleLabel = UILabel()
@@ -46,13 +47,7 @@ final class MoyaViewController: UIViewController {
     // MARK: setUpView
     private func setUpView() {
         self.view.backgroundColor = .gray
-        nameRowView.setContents(header: "영화 제목", content: "")
-        nameEngRowView.setContents(header: "영화 제목(영문)", content: "")
-        prdtYearRowView.setContents(header: "제작연도", content: "")
-        openDateRowView.setContents(header: "개봉일", content: "")
-        movieTypeRowView.setContents(header: "영화 유형", content: "")
-        genreRowView.setContents(header: "영화 장르", content: "")
-        directorsRowView.setContents(header: "제작진", content: "")
+        searchButton.addAction(searchAction, for: .touchUpInside)
     }
     
     // MARK: setUpStyle
@@ -140,6 +135,37 @@ final class MoyaViewController: UIViewController {
             $0.leading.equalToSuperview().offset(20)
             $0.trailing.equalToSuperview().offset(-20)
         }
+    }
+    
+    // MARK: private function
+    private lazy var searchAction = UIAction { [weak self] _ in
+        guard let self, let text = self.searchTextField.text else { return }
+        self.movieAPIService.sendRequest(
+            target: .getMovies(movieName: text),
+            instance: GetMoviesDTO.self
+        ) { result in
+            switch result {
+                
+            case .success(let data):
+                guard let movie = data.toMovieList().first else { return }
+                self.fetchMovieData(movie)
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+}
+
+// MARK: private function
+extension MoyaViewController {
+    private func fetchMovieData(_ data: Movie) {
+        nameRowView.setContents(header: "영화 제목", content: data.name)
+        nameEngRowView.setContents(header: "영화 제목(영문)", content: data.nameEng)
+        prdtYearRowView.setContents(header: "제작연도", content: data.prdtYear)
+        openDateRowView.setContents(header: "개봉일", content: data.openDate)
+        movieTypeRowView.setContents(header: "영화 유형", content: data.movieType)
+        genreRowView.setContents(header: "영화 장르", content: data.genre)
+        directorsRowView.setContents(header: "제작진", content: data.directors.joined())
     }
 }
 

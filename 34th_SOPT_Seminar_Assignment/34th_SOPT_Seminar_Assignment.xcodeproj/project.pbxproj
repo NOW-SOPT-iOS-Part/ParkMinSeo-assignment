@@ -28,6 +28,7 @@
 		88759DAC2BED5551000E4B83 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88759DAB2BED5551000E4B83 /* Movie.swift */; };
 		88759DAF2BED5A5E000E4B83 /* MovieRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88759DAE2BED5A5E000E4B83 /* MovieRowView.swift */; };
 		88759DB12BED6895000E4B83 /* MovieDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88759DB02BED6895000E4B83 /* MovieDTO.swift */; };
+		88759DB42BED7BD4000E4B83 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88759DB32BED7BD4000E4B83 /* Config.swift */; };
 		889213E22BE02AB8007C8849 /* SegmentControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889213E12BE02AB8007C8849 /* SegmentControlViewController.swift */; };
 		889213E42BE02AE5007C8849 /* SegmentControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889213E32BE02AE5007C8849 /* SegmentControlView.swift */; };
 		889213E62BE02B0C007C8849 /* Segments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889213E52BE02B0C007C8849 /* Segments.swift */; };
@@ -83,6 +84,7 @@
 		88759DAB2BED5551000E4B83 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		88759DAE2BED5A5E000E4B83 /* MovieRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieRowView.swift; sourceTree = "<group>"; };
 		88759DB02BED6895000E4B83 /* MovieDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDTO.swift; sourceTree = "<group>"; };
+		88759DB32BED7BD4000E4B83 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		889213E12BE02AB8007C8849 /* SegmentControlViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentControlViewController.swift; sourceTree = "<group>"; };
 		889213E32BE02AE5007C8849 /* SegmentControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentControlView.swift; sourceTree = "<group>"; };
 		889213E52BE02B0C007C8849 /* Segments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Segments.swift; sourceTree = "<group>"; };
@@ -197,7 +199,9 @@
 		88759D992BED4854000E4B83 /* 4th */ = {
 			isa = PBXGroup;
 			children = (
+				88759DB22BED7BCB000E4B83 /* Global */,
 				88759D9A2BED4862000E4B83 /* Network */,
+				88759DAA2BED5543000E4B83 /* Model */,
 				88759D9B2BED486B000E4B83 /* Scenes */,
 			);
 			path = 4th;
@@ -217,7 +221,6 @@
 			isa = PBXGroup;
 			children = (
 				88759DAD2BED59FE000E4B83 /* Component */,
-				88759DAA2BED5543000E4B83 /* Model */,
 				88759D9C2BED488B000E4B83 /* MoyaViewController.swift */,
 			);
 			path = Scenes;
@@ -253,6 +256,14 @@
 				88759DAE2BED5A5E000E4B83 /* MovieRowView.swift */,
 			);
 			path = Component;
+			sourceTree = "<group>";
+		};
+		88759DB22BED7BCB000E4B83 /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				88759DB32BED7BD4000E4B83 /* Config.swift */,
+			);
+			path = Global;
 			sourceTree = "<group>";
 		};
 		889213DC2BE02A69007C8849 /* Common */ = {
@@ -527,6 +538,7 @@
 				884AE98F2BDF7B5D000F7F8C /* NormalContentCVCell.swift in Sources */,
 				88A8942A2BCE644400AEC0A0 /* AppDelegate.swift in Sources */,
 				88A8942C2BCE644400AEC0A0 /* SceneDelegate.swift in Sources */,
+				88759DB42BED7BD4000E4B83 /* Config.swift in Sources */,
 				88A8945B2BCE72C100AEC0A0 /* UIView+.swift in Sources */,
 				88A894642BCEA10700AEC0A0 /* CustomTextField.swift in Sources */,
 				889213E22BE02AB8007C8849 /* SegmentControlViewController.swift in Sources */,
@@ -680,8 +692,10 @@
 		88A8943B2BCE644600AEC0A0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				API_KEY = 12c704dd0f8b32267e6e860adc7928c4;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				BASE_URL = "http://www.kobis.or.kr/kobisopenapi/webservice/rest";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8T2JAAS967;
@@ -707,8 +721,10 @@
 		88A8943C2BCE644600AEC0A0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				API_KEY = 12c704dd0f8b32267e6e860adc7928c4;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				BASE_URL = "http://www.kobis.or.kr/kobisopenapi/webservice/rest";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8T2JAAS967;

@@ -16,7 +16,7 @@ enum MovieTargetType {
 extension MovieTargetType: TargetType {
     
     var baseURL: URL {
-        return URL(string: "http://www.kobis.or.kr/kobisopenapi/webservice/rest")!
+        return URL(string: Config.baseURL)!
     }
     
     var path: String {
@@ -42,13 +42,13 @@ extension MovieTargetType: TargetType {
             
         case .getMovies(let movieName):
             let params = [
-                "key" : "Asfd",
+                "key" : Config.APIKey,
                 "movieNm" : movieName
             ]
             return .requestParameters(parameters: params, encoding: URLEncoding.default)
         case .getDailyBoxOffice(let date):
             let params = [
-                "key" : "Asfd",
+                "key" : Config.APIKey,
                 "targetDt" : date
             ]
             return .requestParameters(parameters: params, encoding: URLEncoding.default)
