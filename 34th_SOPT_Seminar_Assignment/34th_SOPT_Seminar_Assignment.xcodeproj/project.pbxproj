@@ -25,6 +25,7 @@
 		88759DA02BED4C9A000E4B83 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 88759D9F2BED4C9A000E4B83 /* Moya */; };
 		88759DA22BED5237000E4B83 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88759DA12BED5237000E4B83 /* APIService.swift */; };
 		88759DA42BED5250000E4B83 /* MovieTargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88759DA32BED5250000E4B83 /* MovieTargetType.swift */; };
+		88759DA92BED54A5000E4B83 /* MoyaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88759DA82BED54A5000E4B83 /* MoyaCollectionViewCell.swift */; };
 		889213E22BE02AB8007C8849 /* SegmentControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889213E12BE02AB8007C8849 /* SegmentControlViewController.swift */; };
 		889213E42BE02AE5007C8849 /* SegmentControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889213E32BE02AE5007C8849 /* SegmentControlView.swift */; };
 		889213E62BE02B0C007C8849 /* Segments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889213E52BE02B0C007C8849 /* Segments.swift */; };
@@ -77,6 +78,7 @@
 		88759D9C2BED488B000E4B83 /* MoyaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaViewController.swift; sourceTree = "<group>"; };
 		88759DA12BED5237000E4B83 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		88759DA32BED5250000E4B83 /* MovieTargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTargetType.swift; sourceTree = "<group>"; };
+		88759DA82BED54A5000E4B83 /* MoyaCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaCollectionViewCell.swift; sourceTree = "<group>"; };
 		889213E12BE02AB8007C8849 /* SegmentControlViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentControlViewController.swift; sourceTree = "<group>"; };
 		889213E32BE02AE5007C8849 /* SegmentControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentControlView.swift; sourceTree = "<group>"; };
 		889213E52BE02B0C007C8849 /* Segments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Segments.swift; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 		88759D9B2BED486B000E4B83 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				88759DA72BED5496000E4B83 /* Cell */,
 				88759D9C2BED488B000E4B83 /* MoyaViewController.swift */,
 			);
 			path = Scenes;
@@ -228,6 +231,14 @@
 			children = (
 			);
 			path = DTO;
+			sourceTree = "<group>";
+		};
+		88759DA72BED5496000E4B83 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				88759DA82BED54A5000E4B83 /* MoyaCollectionViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		889213DC2BE02A69007C8849 /* Common */ = {
@@ -498,6 +509,7 @@
 				889213E92BE02D94007C8849 /* SegmentCVCell.swift in Sources */,
 				884AE98F2BDF7B5D000F7F8C /* NormalContentCVCell.swift in Sources */,
 				88A8942A2BCE644400AEC0A0 /* AppDelegate.swift in Sources */,
+				88759DA92BED54A5000E4B83 /* MoyaCollectionViewCell.swift in Sources */,
 				88A8942C2BCE644400AEC0A0 /* SceneDelegate.swift in Sources */,
 				88A8945B2BCE72C100AEC0A0 /* UIView+.swift in Sources */,
 				88A894642BCEA10700AEC0A0 /* CustomTextField.swift in Sources */,
