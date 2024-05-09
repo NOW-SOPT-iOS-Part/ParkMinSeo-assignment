@@ -26,6 +26,7 @@
 		88759DA22BED5237000E4B83 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88759DA12BED5237000E4B83 /* APIService.swift */; };
 		88759DA42BED5250000E4B83 /* MovieTargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88759DA32BED5250000E4B83 /* MovieTargetType.swift */; };
 		88759DA92BED54A5000E4B83 /* MoyaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88759DA82BED54A5000E4B83 /* MoyaCollectionViewCell.swift */; };
+		88759DAC2BED5551000E4B83 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88759DAB2BED5551000E4B83 /* Movie.swift */; };
 		889213E22BE02AB8007C8849 /* SegmentControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889213E12BE02AB8007C8849 /* SegmentControlViewController.swift */; };
 		889213E42BE02AE5007C8849 /* SegmentControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889213E32BE02AE5007C8849 /* SegmentControlView.swift */; };
 		889213E62BE02B0C007C8849 /* Segments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889213E52BE02B0C007C8849 /* Segments.swift */; };
@@ -79,6 +80,7 @@
 		88759DA12BED5237000E4B83 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		88759DA32BED5250000E4B83 /* MovieTargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTargetType.swift; sourceTree = "<group>"; };
 		88759DA82BED54A5000E4B83 /* MoyaCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaCollectionViewCell.swift; sourceTree = "<group>"; };
+		88759DAB2BED5551000E4B83 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		889213E12BE02AB8007C8849 /* SegmentControlViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentControlViewController.swift; sourceTree = "<group>"; };
 		889213E32BE02AE5007C8849 /* SegmentControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentControlView.swift; sourceTree = "<group>"; };
 		889213E52BE02B0C007C8849 /* Segments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Segments.swift; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 		88759D9B2BED486B000E4B83 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				88759DAA2BED5543000E4B83 /* Model */,
 				88759DA72BED5496000E4B83 /* Cell */,
 				88759D9C2BED488B000E4B83 /* MoyaViewController.swift */,
 			);
@@ -239,6 +242,14 @@
 				88759DA82BED54A5000E4B83 /* MoyaCollectionViewCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		88759DAA2BED5543000E4B83 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				88759DAB2BED5551000E4B83 /* Movie.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		889213DC2BE02A69007C8849 /* Common */ = {
@@ -501,6 +512,7 @@
 				88759DA42BED5250000E4B83 /* MovieTargetType.swift in Sources */,
 				884AE99A2BDF7D66000F7F8C /* StreamContent.swift in Sources */,
 				889213F52BE117BE007C8849 /* topCarouselCVCell.swift in Sources */,
+				88759DAC2BED5551000E4B83 /* Movie.swift in Sources */,
 				88A8942E2BCE644400AEC0A0 /* ViewController.swift in Sources */,
 				884AE9932BDF7B9F000F7F8C /* HomeView.swift in Sources */,
 				884AE9982BDF7CF7000F7F8C /* NormalContent.swift in Sources */,
