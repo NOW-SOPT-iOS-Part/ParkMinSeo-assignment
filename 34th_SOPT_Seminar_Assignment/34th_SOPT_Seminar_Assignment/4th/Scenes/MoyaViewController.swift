@@ -45,8 +45,14 @@ final class MoyaViewController: UIViewController {
     
     // MARK: setUpView
     private func setUpView() {
-        self.view.backgroundColor = .black
-        
+        self.view.backgroundColor = .gray
+        nameRowView.setContents(header: "영화 제목", content: "")
+        nameEngRowView.setContents(header: "영화 제목(영문)", content: "")
+        prdtYearRowView.setContents(header: "제작연도", content: "")
+        openDateRowView.setContents(header: "개봉일", content: "")
+        movieTypeRowView.setContents(header: "영화 유형", content: "")
+        genreRowView.setContents(header: "영화 장르", content: "")
+        directorsRowView.setContents(header: "제작진", content: "")
     }
     
     // MARK: setUpStyle
@@ -55,15 +61,15 @@ final class MoyaViewController: UIViewController {
             let attrStr = NSAttributedString(
                 string: "영화 제목 검색",
                 attributes: [
-                    .font : UIFont.pretendard(.w500, size: 23),
+                    .font : UIFont.pretendard(.w800, size: 24),
                     .foregroundColor : UIColor.grayScale(.r214)
                 ])
             $0.attributedText = attrStr
         }
         
         searchTextField.do{
-            $0.backgroundColor = .grayScale(.r46)
-            $0.cornerRounding(3)
+            $0.backgroundColor = .grayScale(.r25)
+            $0.cornerRounding(10)
             $0.addHorizontalPadding(left:22, right: 22)
             $0.clearButtonMode = .whileEditing
             
@@ -87,12 +93,14 @@ final class MoyaViewController: UIViewController {
                     .foregroundColor : UIColor.grayScale(.r214)
                   ])
             $0.setAttributedTitle(attrStr, for: .normal)
-            $0.backgroundColor = .blue
+            $0.backgroundColor = .grayScale(.r25)
+            $0.cornerRounding(10)
         }
         
         movieStackView.do {
             $0.axis = .vertical
             $0.distribution = .fillProportionally
+            $0.spacing = 15
         }
     }
     
@@ -118,11 +126,13 @@ final class MoyaViewController: UIViewController {
             $0.top.equalTo(titleLabel.snp.bottom).offset(20)
             $0.leading.equalToSuperview().offset(20)
             $0.width.equalTo(300)
+            $0.height.equalTo(40)
         }
         
         searchButton.snp.makeConstraints {
             $0.centerY.equalTo(searchTextField)
             $0.leading.equalTo(searchTextField.snp.trailing).offset(20)
+            $0.size.equalTo(40)
         }
         
         movieStackView.snp.makeConstraints {

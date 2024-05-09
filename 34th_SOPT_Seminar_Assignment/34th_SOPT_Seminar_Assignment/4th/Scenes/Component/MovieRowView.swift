@@ -13,13 +13,14 @@ final class MovieRowView: UIView {
     
     // MARK: Views
     private let rowHeaderLabel = UILabel().then {
-        $0.font =  UIFont.pretendard(.w500, size: 23)
-        $0.textColor = UIColor.grayScale(.r214)
+        $0.font =  UIFont.pretendard(.w500, size: 15)
+        $0.textColor = UIColor.grayScale(.r46)
     }
     
     private let rowContentLabel = UILabel().then {
-        $0.font =  UIFont.pretendard(.w500, size: 23)
-        $0.textColor = UIColor.grayScale(.r214)
+        $0.font =  UIFont.pretendard(.w300, size: 12)
+        $0.textColor = UIColor.grayScale(.r46)
+        $0.numberOfLines = 3
     }
     
     private lazy var stackView = UIStackView(arrangedSubviews: [
@@ -27,7 +28,11 @@ final class MovieRowView: UIView {
         rowContentLabel
     ]).then {
         $0.axis = .horizontal
-        $0.distribution = .fillProportionally
+        $0.distribution = .equalSpacing
+        $0.backgroundColor = .grayScale(.r214)
+        $0.cornerRounding(5)
+        $0.layoutMargins = UIEdgeInsets(top: 10, left: 15, bottom: 10, right: 15)
+        $0.isLayoutMarginsRelativeArrangement = true
     }
     
     // MARK: init

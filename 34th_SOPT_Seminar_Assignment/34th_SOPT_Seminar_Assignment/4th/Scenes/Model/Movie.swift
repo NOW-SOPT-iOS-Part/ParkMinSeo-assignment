@@ -10,7 +10,7 @@ import Foundation
 struct Movie {
     /// 영화명(국문)
     let name: String
-    /// 영화문(영문)
+    /// 영화명(영문)
     let nameEng: String
     /// 제작연도
     let prdtYear: String
