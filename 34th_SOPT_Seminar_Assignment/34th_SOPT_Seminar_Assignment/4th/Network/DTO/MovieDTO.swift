@@ -36,6 +36,22 @@ struct Director: Decodable {
     let peopleNm: String
 }
 
+extension GetMoviesDTO {
+    func toMovieList() -> [Movie] {
+        return self.movieListResult.movieList.map {
+            return Movie(
+                name: $0.movieNm,
+                nameEng: $0.movieNmEn,
+                prdtYear: $0.prdtYear,
+                openDate: $0.openDt,
+                movieType: $0.typeNm,
+                genre: $0.genreAlt,
+                directors: $0.directors.map { $0.peopleNm }
+            )
+        }
+    }
+}
+
 
 // MARK: GetDailyBoxOfficeDTO
 struct GetDailyBoxOfficeDTO: Decodable {

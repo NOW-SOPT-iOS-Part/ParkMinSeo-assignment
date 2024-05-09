@@ -17,7 +17,7 @@ final class APIService<Provider : TargetType> : MoyaProvider<Provider> {
             switch result {
             case .success(let response):
                 do {
-                    let isValid = try self.validateStatusCode(with: response)
+                    try self.validateStatusCode(with: response) // 일종의 Guard라고 생각했습니다..!
                     let decodedData = try JSONDecoder().decode(Model.self, from: response.data)
                     completion(.success(decodedData))
                 } catch let error as MoyaError{
@@ -32,10 +32,10 @@ final class APIService<Provider : TargetType> : MoyaProvider<Provider> {
         }
     }
     
-    private func validateStatusCode(with response: Response) throws -> Bool {
+    private func validateStatusCode(with response: Response) throws {
         switch response.statusCode {
         case 200..<300:
-            return true
+            return // 이래도 괜찮은 걸까요??
         case 400...500:
             throw MoyaError.statusCode(response)
         default:
