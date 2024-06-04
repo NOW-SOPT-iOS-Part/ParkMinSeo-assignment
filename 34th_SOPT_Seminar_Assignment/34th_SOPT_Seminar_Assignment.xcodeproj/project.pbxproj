@@ -21,6 +21,14 @@
 		884AE9A42BE01527000F7F8C /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884AE9A32BE01527000F7F8C /* HeaderView.swift */; };
 		884AE9A62BE027C3000F7F8C /* HeaderContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884AE9A52BE027C3000F7F8C /* HeaderContent.swift */; };
 		884AE9A82BE02823000F7F8C /* MainCVSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884AE9A72BE02822000F7F8C /* MainCVSection.swift */; };
+		88759D9D2BED488B000E4B83 /* MoyaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88759D9C2BED488B000E4B83 /* MoyaViewController.swift */; };
+		88759DA02BED4C9A000E4B83 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 88759D9F2BED4C9A000E4B83 /* Moya */; };
+		88759DA22BED5237000E4B83 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88759DA12BED5237000E4B83 /* APIService.swift */; };
+		88759DA42BED5250000E4B83 /* MovieTargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88759DA32BED5250000E4B83 /* MovieTargetType.swift */; };
+		88759DAC2BED5551000E4B83 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88759DAB2BED5551000E4B83 /* Movie.swift */; };
+		88759DAF2BED5A5E000E4B83 /* MovieRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88759DAE2BED5A5E000E4B83 /* MovieRowView.swift */; };
+		88759DB12BED6895000E4B83 /* MovieDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88759DB02BED6895000E4B83 /* MovieDTO.swift */; };
+		88759DB42BED7BD4000E4B83 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88759DB32BED7BD4000E4B83 /* Config.swift */; };
 		889213E22BE02AB8007C8849 /* SegmentControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889213E12BE02AB8007C8849 /* SegmentControlViewController.swift */; };
 		889213E42BE02AE5007C8849 /* SegmentControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889213E32BE02AE5007C8849 /* SegmentControlView.swift */; };
 		889213E62BE02B0C007C8849 /* Segments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889213E52BE02B0C007C8849 /* Segments.swift */; };
@@ -70,6 +78,13 @@
 		884AE9A32BE01527000F7F8C /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		884AE9A52BE027C3000F7F8C /* HeaderContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderContent.swift; sourceTree = "<group>"; };
 		884AE9A72BE02822000F7F8C /* MainCVSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCVSection.swift; sourceTree = "<group>"; };
+		88759D9C2BED488B000E4B83 /* MoyaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaViewController.swift; sourceTree = "<group>"; };
+		88759DA12BED5237000E4B83 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		88759DA32BED5250000E4B83 /* MovieTargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTargetType.swift; sourceTree = "<group>"; };
+		88759DAB2BED5551000E4B83 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		88759DAE2BED5A5E000E4B83 /* MovieRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieRowView.swift; sourceTree = "<group>"; };
+		88759DB02BED6895000E4B83 /* MovieDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDTO.swift; sourceTree = "<group>"; };
+		88759DB32BED7BD4000E4B83 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		889213E12BE02AB8007C8849 /* SegmentControlViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentControlViewController.swift; sourceTree = "<group>"; };
 		889213E32BE02AE5007C8849 /* SegmentControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentControlView.swift; sourceTree = "<group>"; };
 		889213E52BE02B0C007C8849 /* Segments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Segments.swift; sourceTree = "<group>"; };
@@ -111,6 +126,7 @@
 			files = (
 				88A8943F2BCE661800AEC0A0 /* SnapKit in Frameworks */,
 				88A894422BCE662700AEC0A0 /* Then in Frameworks */,
+				88759DA02BED4C9A000E4B83 /* Moya in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -178,6 +194,76 @@
 				884AE9A72BE02822000F7F8C /* MainCVSection.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		88759D992BED4854000E4B83 /* 4th */ = {
+			isa = PBXGroup;
+			children = (
+				88759DB22BED7BCB000E4B83 /* Global */,
+				88759D9A2BED4862000E4B83 /* Network */,
+				88759DAA2BED5543000E4B83 /* Model */,
+				88759D9B2BED486B000E4B83 /* Scenes */,
+			);
+			path = 4th;
+			sourceTree = "<group>";
+		};
+		88759D9A2BED4862000E4B83 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				88759DA62BED529E000E4B83 /* DTO */,
+				88759DA52BED5282000E4B83 /* Movie */,
+				88759DA12BED5237000E4B83 /* APIService.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		88759D9B2BED486B000E4B83 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				88759DAD2BED59FE000E4B83 /* Component */,
+				88759D9C2BED488B000E4B83 /* MoyaViewController.swift */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		88759DA52BED5282000E4B83 /* Movie */ = {
+			isa = PBXGroup;
+			children = (
+				88759DA32BED5250000E4B83 /* MovieTargetType.swift */,
+			);
+			path = Movie;
+			sourceTree = "<group>";
+		};
+		88759DA62BED529E000E4B83 /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				88759DB02BED6895000E4B83 /* MovieDTO.swift */,
+			);
+			path = DTO;
+			sourceTree = "<group>";
+		};
+		88759DAA2BED5543000E4B83 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				88759DAB2BED5551000E4B83 /* Movie.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		88759DAD2BED59FE000E4B83 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				88759DAE2BED5A5E000E4B83 /* MovieRowView.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		88759DB22BED7BCB000E4B83 /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				88759DB32BED7BD4000E4B83 /* Config.swift */,
+			);
+			path = Global;
 			sourceTree = "<group>";
 		};
 		889213DC2BE02A69007C8849 /* Common */ = {
@@ -269,6 +355,7 @@
 		88A894282BCE644400AEC0A0 /* 34th_SOPT_Seminar_Assignment */ = {
 			isa = PBXGroup;
 			children = (
+				88759D992BED4854000E4B83 /* 4th */,
 				889213F72BE12127007C8849 /* 3rd */,
 				889213F62BE12117007C8849 /* 2nd */,
 				88A894622BCEA0F500AEC0A0 /* Component */,
@@ -348,6 +435,7 @@
 			packageProductDependencies = (
 				88A8943E2BCE661800AEC0A0 /* SnapKit */,
 				88A894412BCE662700AEC0A0 /* Then */,
+				88759D9F2BED4C9A000E4B83 /* Moya */,
 			);
 			productName = 34th_SOPT_Seminar_Assignment;
 			productReference = 88A894262BCE644400AEC0A0 /* 34th_SOPT_Seminar_Assignment.app */;
@@ -380,6 +468,7 @@
 			packageReferences = (
 				88A8943D2BCE661800AEC0A0 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				88A894402BCE662700AEC0A0 /* XCRemoteSwiftPackageReference "Then" */,
+				88759D9E2BED4C9A000E4B83 /* XCRemoteSwiftPackageReference "Moya" */,
 			);
 			productRefGroup = 88A894272BCE644400AEC0A0 /* Products */;
 			projectDirPath = "";
@@ -423,17 +512,23 @@
 				88A894612BCE7A2A00AEC0A0 /* UIColor+.swift in Sources */,
 				884AE9A22BDF9D70000F7F8C /* MainCollectionView.swift in Sources */,
 				88A894662BCEC8C600AEC0A0 /* String+.swift in Sources */,
+				88759D9D2BED488B000E4B83 /* MoyaViewController.swift in Sources */,
 				88A894682BCEE2FA00AEC0A0 /* WelcomeViewController.swift in Sources */,
 				884AE9A82BE02823000F7F8C /* MainCVSection.swift in Sources */,
 				884AE99C2BDF8DF2000F7F8C /* NSObject+.swift in Sources */,
 				884AE9A02BDF9C59000F7F8C /* AdContent.swift in Sources */,
 				884AE99E2BDF9C3B000F7F8C /* AdContentCVCell.swift in Sources */,
+				88759DA22BED5237000E4B83 /* APIService.swift in Sources */,
 				88A894592BCE69AC00AEC0A0 /* Font+.swift in Sources */,
 				889213E62BE02B0C007C8849 /* Segments.swift in Sources */,
 				88A8946A2BCEE90100AEC0A0 /* NicknameBottomSheetViewController.swift in Sources */,
+				88759DB12BED6895000E4B83 /* MovieDTO.swift in Sources */,
 				88A8945F2BCE761000AEC0A0 /* UITextField+.swift in Sources */,
+				88759DA42BED5250000E4B83 /* MovieTargetType.swift in Sources */,
+				88759DAF2BED5A5E000E4B83 /* MovieRowView.swift in Sources */,
 				884AE99A2BDF7D66000F7F8C /* StreamContent.swift in Sources */,
 				889213F52BE117BE007C8849 /* topCarouselCVCell.swift in Sources */,
+				88759DAC2BED5551000E4B83 /* Movie.swift in Sources */,
 				88A8942E2BCE644400AEC0A0 /* ViewController.swift in Sources */,
 				884AE9932BDF7B9F000F7F8C /* HomeView.swift in Sources */,
 				884AE9982BDF7CF7000F7F8C /* NormalContent.swift in Sources */,
@@ -443,6 +538,7 @@
 				884AE98F2BDF7B5D000F7F8C /* NormalContentCVCell.swift in Sources */,
 				88A8942A2BCE644400AEC0A0 /* AppDelegate.swift in Sources */,
 				88A8942C2BCE644400AEC0A0 /* SceneDelegate.swift in Sources */,
+				88759DB42BED7BD4000E4B83 /* Config.swift in Sources */,
 				88A8945B2BCE72C100AEC0A0 /* UIView+.swift in Sources */,
 				88A894642BCEA10700AEC0A0 /* CustomTextField.swift in Sources */,
 				889213E22BE02AB8007C8849 /* SegmentControlViewController.swift in Sources */,
@@ -596,8 +692,10 @@
 		88A8943B2BCE644600AEC0A0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				API_KEY = 12c704dd0f8b32267e6e860adc7928c4;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				BASE_URL = "http://www.kobis.or.kr/kobisopenapi/webservice/rest";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8T2JAAS967;
@@ -623,8 +721,10 @@
 		88A8943C2BCE644600AEC0A0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				API_KEY = 12c704dd0f8b32267e6e860adc7928c4;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				BASE_URL = "http://www.kobis.or.kr/kobisopenapi/webservice/rest";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8T2JAAS967;
@@ -671,6 +771,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		88759D9E2BED4C9A000E4B83 /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 15.0.3;
+			};
+		};
 		88A8943D2BCE661800AEC0A0 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -690,6 +798,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		88759D9F2BED4C9A000E4B83 /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 88759D9E2BED4C9A000E4B83 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
 		88A8943E2BCE661800AEC0A0 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 88A8943D2BCE661800AEC0A0 /* XCRemoteSwiftPackageReference "SnapKit" */;
