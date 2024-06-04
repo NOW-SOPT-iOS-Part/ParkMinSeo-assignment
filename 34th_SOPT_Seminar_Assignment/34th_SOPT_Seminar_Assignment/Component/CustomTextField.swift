@@ -85,8 +85,7 @@ extension CustomTextField {
     /// TextField의 RightView에 clearBtn, visibleBtn을 추가합니다.
     func setupRightView(clearBtn: Bool = false, visibleBtn: Bool = false) {
         let btnList = [(clearButton, clearBtn), (visibleButton, visibleBtn)].compactMap {
-            if $0.1 { return $0.0 }
-            else { return nil }
+            return $0.1 ? $0.0 : nil
         }
         let stackView = UIStackView(arrangedSubviews: btnList)
             .then {
