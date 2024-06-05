@@ -30,6 +30,10 @@ final class SegmentControlView: UICollectionView {
         self.register(SegmentCVCell.self, forCellWithReuseIdentifier: SegmentCVCell.className)
     }
     
+}
+
+// MARK: Interface Function
+extension SegmentControlView {
     // MARK: Bind Data
     func bind(segments: Observable<[Segments]>, cellDidTap: PublishRelay<Segments>, disposeBag: DisposeBag) {
         

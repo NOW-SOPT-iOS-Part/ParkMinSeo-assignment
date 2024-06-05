@@ -11,14 +11,17 @@ final class HomeViewModel: ViewModelType {
     
     // MARK: Properties
     
+    // MARK: Input
     struct Input {
         
     }
     
+    // MARK: Output
     struct Output {
         
     }
     
+    // MARK: Transform
     func transform(input: Input) -> Output {
         <#code#>
     }
