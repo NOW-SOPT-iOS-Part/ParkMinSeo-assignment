@@ -24,6 +24,11 @@
 		888E10692C1101DE00AE311D /* AdContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888E10682C1101DE00AE311D /* AdContent.swift */; };
 		888E106B2C1101E800AE311D /* HeaderContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888E106A2C1101E800AE311D /* HeaderContent.swift */; };
 		888E106D2C1101FC00AE311D /* MainCVSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888E106C2C1101FC00AE311D /* MainCVSection.swift */; };
+		888E10702C1105E300AE311D /* NormalContentCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888E106F2C1105E300AE311D /* NormalContentCVCell.swift */; };
+		888E10722C11060900AE311D /* StreamContentCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888E10712C11060900AE311D /* StreamContentCVCell.swift */; };
+		888E10742C11061400AE311D /* AdContentCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888E10732C11061400AE311D /* AdContentCVCell.swift */; };
+		888E10762C11063900AE311D /* CVHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888E10752C11063900AE311D /* CVHeaderView.swift */; };
+		888E10782C11070900AE311D /* TopCarouselCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888E10772C11070800AE311D /* TopCarouselCVCell.swift */; };
 		88A8942A2BCE644400AEC0A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A894292BCE644400AEC0A0 /* AppDelegate.swift */; };
 		88A8942C2BCE644400AEC0A0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A8942B2BCE644400AEC0A0 /* SceneDelegate.swift */; };
 		88A894312BCE644400AEC0A0 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 88A894302BCE644400AEC0A0 /* Base */; };
@@ -82,6 +87,11 @@
 		888E10682C1101DE00AE311D /* AdContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdContent.swift; sourceTree = "<group>"; };
 		888E106A2C1101E800AE311D /* HeaderContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderContent.swift; sourceTree = "<group>"; };
 		888E106C2C1101FC00AE311D /* MainCVSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCVSection.swift; sourceTree = "<group>"; };
+		888E106F2C1105E300AE311D /* NormalContentCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalContentCVCell.swift; sourceTree = "<group>"; };
+		888E10712C11060900AE311D /* StreamContentCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamContentCVCell.swift; sourceTree = "<group>"; };
+		888E10732C11061400AE311D /* AdContentCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdContentCVCell.swift; sourceTree = "<group>"; };
+		888E10752C11063900AE311D /* CVHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVHeaderView.swift; sourceTree = "<group>"; };
+		888E10772C11070800AE311D /* TopCarouselCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopCarouselCVCell.swift; sourceTree = "<group>"; };
 		889213E12BE02AB8007C8849 /* SegmentControlViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentControlViewController.swift; sourceTree = "<group>"; };
 		889213E32BE02AE5007C8849 /* SegmentControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentControlView.swift; sourceTree = "<group>"; };
 		889213E52BE02B0C007C8849 /* Segments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Segments.swift; sourceTree = "<group>"; };
@@ -306,6 +316,7 @@
 		888E10432C10D35500AE311D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				888E106E2C1105D700AE311D /* Cell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -379,6 +390,18 @@
 				888E106C2C1101FC00AE311D /* MainCVSection.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		888E106E2C1105D700AE311D /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				888E106F2C1105E300AE311D /* NormalContentCVCell.swift */,
+				888E10712C11060900AE311D /* StreamContentCVCell.swift */,
+				888E10732C11061400AE311D /* AdContentCVCell.swift */,
+				888E10752C11063900AE311D /* CVHeaderView.swift */,
+				888E10772C11070800AE311D /* TopCarouselCVCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		889213DC2BE02A69007C8849 /* Common */ = {
@@ -627,12 +650,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				88A894612BCE7A2A00AEC0A0 /* UIColor+.swift in Sources */,
+				888E10762C11063900AE311D /* CVHeaderView.swift in Sources */,
+				888E10742C11061400AE311D /* AdContentCVCell.swift in Sources */,
 				88A894662BCEC8C600AEC0A0 /* String+.swift in Sources */,
 				884AE99C2BDF8DF2000F7F8C /* NSObject+.swift in Sources */,
 				888E106D2C1101FC00AE311D /* MainCVSection.swift in Sources */,
 				888E10692C1101DE00AE311D /* AdContent.swift in Sources */,
 				888E10622C11005600AE311D /* HomeViewModel.swift in Sources */,
 				888E104E2C10DF3000AE311D /* Segments.swift in Sources */,
+				888E10722C11060900AE311D /* StreamContentCVCell.swift in Sources */,
+				888E10782C11070900AE311D /* TopCarouselCVCell.swift in Sources */,
+				888E10702C1105E300AE311D /* NormalContentCVCell.swift in Sources */,
 				888E10462C10D59A00AE311D /* AppTabBarController.swift in Sources */,
 				888E10652C1101B100AE311D /* NormalContent.swift in Sources */,
 				888E10672C1101CA00AE311D /* StreamContent.swift in Sources */,
