@@ -13,21 +13,6 @@ import RxRelay
 
 final class TopCarouselCVCell: UICollectionViewCell {
     
-    // MARK: Properties -> 해당 내용 VM으로 이식
-    private let images = BehaviorSubject<[String]>(
-        value: [
-            "contentImage1",
-            "contentImage2",
-            "contentImage3",
-            "contentImage4",
-            "contentImage1",
-            "contentImage2",
-            "contentImage3",
-            "contentImage4"
-        ]
-    )
-    private let currentPage = BehaviorRelay(value: 0)
-    
     // MARK: Views
     private let collectionView = UICollectionView(frame: .zero, collectionViewLayout: TopCarouselCVCell.createLayout())
     private let pageControl = UIPageControl()
@@ -47,8 +32,6 @@ final class TopCarouselCVCell: UICollectionViewCell {
     
     // MARK: setUpView
     private func setUpView() {
-        self.collectionView.delegate = self
-        self.collectionView.dataSource = self
         self.collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "justImageCell")
         self.pageControl.addAction(pageChangeAction, for: .touchUpInside)
     }
@@ -98,6 +81,40 @@ final class TopCarouselCVCell: UICollectionViewCell {
     }
 
 }
+
+// MARK: Interface Function
+extension TopCarouselCVCell {
+    // MARK: Bind Data
+    func bind(images: Observable<[String]>, currentPage: BehaviorRelay<Int>, disposeBag: DisposeBag) {
+        
+        images.bind(
+            to: self.collectionView.rx.items(cellIdentifier: "imageCell", cellType: UICollectionViewCell.self)
+        ) { row, item, cell in
+            cell.backgroundColor = .clear
+            let imageView = UIImageView(image: UIImage(named: item))
+            imageView.contentMode = .scaleAspectFill
+            imageView.clipsToBounds = true
+            imageView.frame = cell.bounds
+            cell.addSubview(imageView)
+        }
+        .disposed(by: disposeBag)
+        
+        // TODO: CHECK - numberOfPage 필요할 수도
+        
+        currentPage
+            .bind(to: self.pageControl.rx.currentPage)
+            .disposed(by: disposeBag)
+        
+        self.collectionView.rx.contentOffset
+            .map { [weak self] contentOffset -> Int in
+                guard let self = self else { return 0 }
+                return Int(contentOffset.x / self.collectionView.frame.width)
+            }
+            .bind(to: pageControl.rx.currentPage)
+            .disposed(by: disposeBag)
+    }
+}
+
 
 // MARK: Layout Configuration
 extension TopCarouselCVCell {
