@@ -18,6 +18,7 @@
 		888E105A2C10ED7D00AE311D /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 888E10592C10ED7D00AE311D /* RxRelay */; };
 		888E105C2C10ED7D00AE311D /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 888E105B2C10ED7D00AE311D /* RxSwift */; };
 		888E10602C11000600AE311D /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888E105F2C11000600AE311D /* ViewModelType.swift */; };
+		888E10622C11005600AE311D /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888E10612C11005600AE311D /* HomeViewModel.swift */; };
 		88A8942A2BCE644400AEC0A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A894292BCE644400AEC0A0 /* AppDelegate.swift */; };
 		88A8942C2BCE644400AEC0A0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A8942B2BCE644400AEC0A0 /* SceneDelegate.swift */; };
 		88A894312BCE644400AEC0A0 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 88A894302BCE644400AEC0A0 /* Base */; };
@@ -70,6 +71,7 @@
 		888E10512C10E18200AE311D /* SegmentControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentControlView.swift; sourceTree = "<group>"; };
 		888E10542C10E19D00AE311D /* SegmentCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentCVCell.swift; sourceTree = "<group>"; };
 		888E105F2C11000600AE311D /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
+		888E10612C11005600AE311D /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		889213E12BE02AB8007C8849 /* SegmentControlViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentControlViewController.swift; sourceTree = "<group>"; };
 		889213E32BE02AE5007C8849 /* SegmentControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentControlView.swift; sourceTree = "<group>"; };
 		889213E52BE02B0C007C8849 /* Segments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Segments.swift; sourceTree = "<group>"; };
@@ -300,6 +302,7 @@
 		888E10442C10D35D00AE311D /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				888E10612C11005600AE311D /* HomeViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -603,6 +606,7 @@
 				88A894612BCE7A2A00AEC0A0 /* UIColor+.swift in Sources */,
 				88A894662BCEC8C600AEC0A0 /* String+.swift in Sources */,
 				884AE99C2BDF8DF2000F7F8C /* NSObject+.swift in Sources */,
+				888E10622C11005600AE311D /* HomeViewModel.swift in Sources */,
 				888E104E2C10DF3000AE311D /* Segments.swift in Sources */,
 				888E10462C10D59A00AE311D /* AppTabBarController.swift in Sources */,
 				88A894592BCE69AC00AEC0A0 /* Font+.swift in Sources */,
