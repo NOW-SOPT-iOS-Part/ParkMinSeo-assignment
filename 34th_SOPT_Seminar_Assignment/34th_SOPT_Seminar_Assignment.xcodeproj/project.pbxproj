@@ -11,6 +11,7 @@
 		88759DA02BED4C9A000E4B83 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 88759D9F2BED4C9A000E4B83 /* Moya */; };
 		888E10462C10D59A00AE311D /* AppTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888E10452C10D59A00AE311D /* AppTabBarController.swift */; };
 		888E104A2C10D6E500AE311D /* AppTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888E10492C10D6E500AE311D /* AppTab.swift */; };
+		888E104E2C10DF3000AE311D /* Segments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888E104D2C10DF3000AE311D /* Segments.swift */; };
 		88A8942A2BCE644400AEC0A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A894292BCE644400AEC0A0 /* AppDelegate.swift */; };
 		88A8942C2BCE644400AEC0A0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A8942B2BCE644400AEC0A0 /* SceneDelegate.swift */; };
 		88A894312BCE644400AEC0A0 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 88A894302BCE644400AEC0A0 /* Base */; };
@@ -59,6 +60,7 @@
 		88759DB32BED7BD4000E4B83 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		888E10452C10D59A00AE311D /* AppTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabBarController.swift; sourceTree = "<group>"; };
 		888E10492C10D6E500AE311D /* AppTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTab.swift; sourceTree = "<group>"; };
+		888E104D2C10DF3000AE311D /* Segments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Segments.swift; sourceTree = "<group>"; };
 		889213E12BE02AB8007C8849 /* SegmentControlViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentControlViewController.swift; sourceTree = "<group>"; };
 		889213E32BE02AE5007C8849 /* SegmentControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentControlView.swift; sourceTree = "<group>"; };
 		889213E52BE02B0C007C8849 /* Segments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Segments.swift; sourceTree = "<group>"; };
@@ -261,6 +263,7 @@
 		888E10412C10D2F500AE311D /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				888E104B2C10DD0D00AE311D /* SegmentControl */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -303,6 +306,38 @@
 				888E10492C10D6E500AE311D /* AppTab.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		888E104B2C10DD0D00AE311D /* SegmentControl */ = {
+			isa = PBXGroup;
+			children = (
+				888E10502C10E13500AE311D /* ViewModel */,
+				888E104F2C10E12B00AE311D /* View */,
+				888E104C2C10DF2500AE311D /* Model */,
+			);
+			path = SegmentControl;
+			sourceTree = "<group>";
+		};
+		888E104C2C10DF2500AE311D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				888E104D2C10DF3000AE311D /* Segments.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		888E104F2C10E12B00AE311D /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		888E10502C10E13500AE311D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		889213DC2BE02A69007C8849 /* Common */ = {
@@ -549,6 +584,7 @@
 				88A894612BCE7A2A00AEC0A0 /* UIColor+.swift in Sources */,
 				88A894662BCEC8C600AEC0A0 /* String+.swift in Sources */,
 				884AE99C2BDF8DF2000F7F8C /* NSObject+.swift in Sources */,
+				888E104E2C10DF3000AE311D /* Segments.swift in Sources */,
 				888E10462C10D59A00AE311D /* AppTabBarController.swift in Sources */,
 				88A894592BCE69AC00AEC0A0 /* Font+.swift in Sources */,
 				888E104A2C10D6E500AE311D /* AppTab.swift in Sources */,
