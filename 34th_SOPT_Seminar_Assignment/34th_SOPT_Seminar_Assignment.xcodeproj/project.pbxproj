@@ -17,6 +17,7 @@
 		888E10582C10ED7D00AE311D /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 888E10572C10ED7D00AE311D /* RxCocoa */; };
 		888E105A2C10ED7D00AE311D /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 888E10592C10ED7D00AE311D /* RxRelay */; };
 		888E105C2C10ED7D00AE311D /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 888E105B2C10ED7D00AE311D /* RxSwift */; };
+		888E10602C11000600AE311D /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888E105F2C11000600AE311D /* ViewModelType.swift */; };
 		88A8942A2BCE644400AEC0A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A894292BCE644400AEC0A0 /* AppDelegate.swift */; };
 		88A8942C2BCE644400AEC0A0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A8942B2BCE644400AEC0A0 /* SceneDelegate.swift */; };
 		88A894312BCE644400AEC0A0 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 88A894302BCE644400AEC0A0 /* Base */; };
@@ -68,6 +69,7 @@
 		888E104D2C10DF3000AE311D /* Segments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Segments.swift; sourceTree = "<group>"; };
 		888E10512C10E18200AE311D /* SegmentControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentControlView.swift; sourceTree = "<group>"; };
 		888E10542C10E19D00AE311D /* SegmentCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentCVCell.swift; sourceTree = "<group>"; };
+		888E105F2C11000600AE311D /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
 		889213E12BE02AB8007C8849 /* SegmentControlViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentControlViewController.swift; sourceTree = "<group>"; };
 		889213E32BE02AE5007C8849 /* SegmentControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentControlView.swift; sourceTree = "<group>"; };
 		889213E52BE02B0C007C8849 /* Segments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Segments.swift; sourceTree = "<group>"; };
@@ -255,6 +257,7 @@
 		888E103F2C10CD1300AE311D /* 5th */ = {
 			isa = PBXGroup;
 			children = (
+				888E105F2C11000600AE311D /* ViewModelType.swift */,
 				888E10402C10D2C400AE311D /* Presentation */,
 			);
 			path = 5th;
@@ -605,6 +608,7 @@
 				88A894592BCE69AC00AEC0A0 /* Font+.swift in Sources */,
 				888E10522C10E18200AE311D /* SegmentControlView.swift in Sources */,
 				888E104A2C10D6E500AE311D /* AppTab.swift in Sources */,
+				888E10602C11000600AE311D /* ViewModelType.swift in Sources */,
 				888E10552C10E19D00AE311D /* SegmentCVCell.swift in Sources */,
 				88A8945F2BCE761000AEC0A0 /* UITextField+.swift in Sources */,
 				88A8942A2BCE644400AEC0A0 /* AppDelegate.swift in Sources */,
