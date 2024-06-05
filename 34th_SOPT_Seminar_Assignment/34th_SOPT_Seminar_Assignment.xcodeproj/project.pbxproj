@@ -7,37 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		884AE9892BDF74DB000F7F8C /* AppTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884AE9882BDF74DB000F7F8C /* AppTabBarController.swift */; };
-		884AE98F2BDF7B5D000F7F8C /* NormalContentCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884AE98E2BDF7B5D000F7F8C /* NormalContentCVCell.swift */; };
-		884AE9912BDF7B76000F7F8C /* StreamContentCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884AE9902BDF7B76000F7F8C /* StreamContentCVCell.swift */; };
-		884AE9932BDF7B9F000F7F8C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884AE9922BDF7B9F000F7F8C /* HomeView.swift */; };
-		884AE9952BDF7BAF000F7F8C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884AE9942BDF7BAF000F7F8C /* HomeViewController.swift */; };
-		884AE9982BDF7CF7000F7F8C /* NormalContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884AE9972BDF7CF7000F7F8C /* NormalContent.swift */; };
-		884AE99A2BDF7D66000F7F8C /* StreamContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884AE9992BDF7D66000F7F8C /* StreamContent.swift */; };
 		884AE99C2BDF8DF2000F7F8C /* NSObject+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884AE99B2BDF8DF2000F7F8C /* NSObject+.swift */; };
-		884AE99E2BDF9C3B000F7F8C /* AdContentCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884AE99D2BDF9C3B000F7F8C /* AdContentCVCell.swift */; };
-		884AE9A02BDF9C59000F7F8C /* AdContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884AE99F2BDF9C59000F7F8C /* AdContent.swift */; };
-		884AE9A22BDF9D70000F7F8C /* MainCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884AE9A12BDF9D70000F7F8C /* MainCollectionView.swift */; };
-		884AE9A42BE01527000F7F8C /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884AE9A32BE01527000F7F8C /* HeaderView.swift */; };
-		884AE9A62BE027C3000F7F8C /* HeaderContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884AE9A52BE027C3000F7F8C /* HeaderContent.swift */; };
-		884AE9A82BE02823000F7F8C /* MainCVSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884AE9A72BE02822000F7F8C /* MainCVSection.swift */; };
-		88759D9D2BED488B000E4B83 /* MoyaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88759D9C2BED488B000E4B83 /* MoyaViewController.swift */; };
 		88759DA02BED4C9A000E4B83 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 88759D9F2BED4C9A000E4B83 /* Moya */; };
-		88759DA22BED5237000E4B83 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88759DA12BED5237000E4B83 /* APIService.swift */; };
-		88759DA42BED5250000E4B83 /* MovieTargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88759DA32BED5250000E4B83 /* MovieTargetType.swift */; };
-		88759DAC2BED5551000E4B83 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88759DAB2BED5551000E4B83 /* Movie.swift */; };
-		88759DAF2BED5A5E000E4B83 /* MovieRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88759DAE2BED5A5E000E4B83 /* MovieRowView.swift */; };
-		88759DB12BED6895000E4B83 /* MovieDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88759DB02BED6895000E4B83 /* MovieDTO.swift */; };
-		88759DB42BED7BD4000E4B83 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88759DB32BED7BD4000E4B83 /* Config.swift */; };
 		889213E22BE02AB8007C8849 /* SegmentControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889213E12BE02AB8007C8849 /* SegmentControlViewController.swift */; };
-		889213E42BE02AE5007C8849 /* SegmentControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889213E32BE02AE5007C8849 /* SegmentControlView.swift */; };
-		889213E62BE02B0C007C8849 /* Segments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889213E52BE02B0C007C8849 /* Segments.swift */; };
-		889213E92BE02D94007C8849 /* SegmentCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889213E82BE02D94007C8849 /* SegmentCVCell.swift */; };
-		889213EB2BE03C4E007C8849 /* topView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889213EA2BE03C4E007C8849 /* topView.swift */; };
-		889213F52BE117BE007C8849 /* topCarouselCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889213F42BE117BE007C8849 /* topCarouselCVCell.swift */; };
 		88A8942A2BCE644400AEC0A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A894292BCE644400AEC0A0 /* AppDelegate.swift */; };
 		88A8942C2BCE644400AEC0A0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A8942B2BCE644400AEC0A0 /* SceneDelegate.swift */; };
-		88A8942E2BCE644400AEC0A0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A8942D2BCE644400AEC0A0 /* ViewController.swift */; };
 		88A894312BCE644400AEC0A0 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 88A894302BCE644400AEC0A0 /* Base */; };
 		88A894332BCE644600AEC0A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88A894322BCE644600AEC0A0 /* Assets.xcassets */; };
 		88A894362BCE644600AEC0A0 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 88A894352BCE644600AEC0A0 /* Base */; };
@@ -54,13 +28,10 @@
 		88A894562BCE693000AEC0A0 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 88A8944D2BCE693000AEC0A0 /* Pretendard-Medium.otf */; };
 		88A894592BCE69AC00AEC0A0 /* Font+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A894582BCE69AC00AEC0A0 /* Font+.swift */; };
 		88A8945B2BCE72C100AEC0A0 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A8945A2BCE72C100AEC0A0 /* UIView+.swift */; };
-		88A8945D2BCE738200AEC0A0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A8945C2BCE738200AEC0A0 /* LoginViewController.swift */; };
 		88A8945F2BCE761000AEC0A0 /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A8945E2BCE761000AEC0A0 /* UITextField+.swift */; };
 		88A894612BCE7A2A00AEC0A0 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A894602BCE7A2A00AEC0A0 /* UIColor+.swift */; };
 		88A894642BCEA10700AEC0A0 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A894632BCEA10700AEC0A0 /* CustomTextField.swift */; };
 		88A894662BCEC8C600AEC0A0 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A894652BCEC8C600AEC0A0 /* String+.swift */; };
-		88A894682BCEE2FA00AEC0A0 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A894672BCEE2FA00AEC0A0 /* WelcomeViewController.swift */; };
-		88A8946A2BCEE90100AEC0A0 /* NicknameBottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A894692BCEE90100AEC0A0 /* NicknameBottomSheetViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -266,6 +237,13 @@
 			path = Global;
 			sourceTree = "<group>";
 		};
+		888E103F2C10CD1300AE311D /* 5th */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = 5th;
+			sourceTree = "<group>";
+		};
 		889213DC2BE02A69007C8849 /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -355,6 +333,7 @@
 		88A894282BCE644400AEC0A0 /* 34th_SOPT_Seminar_Assignment */ = {
 			isa = PBXGroup;
 			children = (
+				888E103F2C10CD1300AE311D /* 5th */,
 				88759D992BED4854000E4B83 /* 4th */,
 				889213F72BE12127007C8849 /* 3rd */,
 				889213F62BE12117007C8849 /* 2nd */,
@@ -506,45 +485,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				884AE9A62BE027C3000F7F8C /* HeaderContent.swift in Sources */,
-				884AE9892BDF74DB000F7F8C /* AppTabBarController.swift in Sources */,
-				88A8945D2BCE738200AEC0A0 /* LoginViewController.swift in Sources */,
 				88A894612BCE7A2A00AEC0A0 /* UIColor+.swift in Sources */,
-				884AE9A22BDF9D70000F7F8C /* MainCollectionView.swift in Sources */,
 				88A894662BCEC8C600AEC0A0 /* String+.swift in Sources */,
-				88759D9D2BED488B000E4B83 /* MoyaViewController.swift in Sources */,
-				88A894682BCEE2FA00AEC0A0 /* WelcomeViewController.swift in Sources */,
-				884AE9A82BE02823000F7F8C /* MainCVSection.swift in Sources */,
 				884AE99C2BDF8DF2000F7F8C /* NSObject+.swift in Sources */,
-				884AE9A02BDF9C59000F7F8C /* AdContent.swift in Sources */,
-				884AE99E2BDF9C3B000F7F8C /* AdContentCVCell.swift in Sources */,
-				88759DA22BED5237000E4B83 /* APIService.swift in Sources */,
 				88A894592BCE69AC00AEC0A0 /* Font+.swift in Sources */,
-				889213E62BE02B0C007C8849 /* Segments.swift in Sources */,
-				88A8946A2BCEE90100AEC0A0 /* NicknameBottomSheetViewController.swift in Sources */,
-				88759DB12BED6895000E4B83 /* MovieDTO.swift in Sources */,
 				88A8945F2BCE761000AEC0A0 /* UITextField+.swift in Sources */,
-				88759DA42BED5250000E4B83 /* MovieTargetType.swift in Sources */,
-				88759DAF2BED5A5E000E4B83 /* MovieRowView.swift in Sources */,
-				884AE99A2BDF7D66000F7F8C /* StreamContent.swift in Sources */,
-				889213F52BE117BE007C8849 /* topCarouselCVCell.swift in Sources */,
-				88759DAC2BED5551000E4B83 /* Movie.swift in Sources */,
-				88A8942E2BCE644400AEC0A0 /* ViewController.swift in Sources */,
-				884AE9932BDF7B9F000F7F8C /* HomeView.swift in Sources */,
-				884AE9982BDF7CF7000F7F8C /* NormalContent.swift in Sources */,
-				889213EB2BE03C4E007C8849 /* topView.swift in Sources */,
-				889213E42BE02AE5007C8849 /* SegmentControlView.swift in Sources */,
-				889213E92BE02D94007C8849 /* SegmentCVCell.swift in Sources */,
-				884AE98F2BDF7B5D000F7F8C /* NormalContentCVCell.swift in Sources */,
 				88A8942A2BCE644400AEC0A0 /* AppDelegate.swift in Sources */,
 				88A8942C2BCE644400AEC0A0 /* SceneDelegate.swift in Sources */,
-				88759DB42BED7BD4000E4B83 /* Config.swift in Sources */,
 				88A8945B2BCE72C100AEC0A0 /* UIView+.swift in Sources */,
 				88A894642BCEA10700AEC0A0 /* CustomTextField.swift in Sources */,
 				889213E22BE02AB8007C8849 /* SegmentControlViewController.swift in Sources */,
-				884AE9952BDF7BAF000F7F8C /* HomeViewController.swift in Sources */,
-				884AE9912BDF7B76000F7F8C /* StreamContentCVCell.swift in Sources */,
-				884AE9A42BE01527000F7F8C /* HeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
