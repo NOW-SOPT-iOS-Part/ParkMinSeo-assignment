@@ -19,6 +19,11 @@
 		888E105C2C10ED7D00AE311D /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 888E105B2C10ED7D00AE311D /* RxSwift */; };
 		888E10602C11000600AE311D /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888E105F2C11000600AE311D /* ViewModelType.swift */; };
 		888E10622C11005600AE311D /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888E10612C11005600AE311D /* HomeViewModel.swift */; };
+		888E10652C1101B100AE311D /* NormalContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888E10642C1101B100AE311D /* NormalContent.swift */; };
+		888E10672C1101CA00AE311D /* StreamContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888E10662C1101CA00AE311D /* StreamContent.swift */; };
+		888E10692C1101DE00AE311D /* AdContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888E10682C1101DE00AE311D /* AdContent.swift */; };
+		888E106B2C1101E800AE311D /* HeaderContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888E106A2C1101E800AE311D /* HeaderContent.swift */; };
+		888E106D2C1101FC00AE311D /* MainCVSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888E106C2C1101FC00AE311D /* MainCVSection.swift */; };
 		88A8942A2BCE644400AEC0A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A894292BCE644400AEC0A0 /* AppDelegate.swift */; };
 		88A8942C2BCE644400AEC0A0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A8942B2BCE644400AEC0A0 /* SceneDelegate.swift */; };
 		88A894312BCE644400AEC0A0 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 88A894302BCE644400AEC0A0 /* Base */; };
@@ -72,6 +77,11 @@
 		888E10542C10E19D00AE311D /* SegmentCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentCVCell.swift; sourceTree = "<group>"; };
 		888E105F2C11000600AE311D /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
 		888E10612C11005600AE311D /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		888E10642C1101B100AE311D /* NormalContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalContent.swift; sourceTree = "<group>"; };
+		888E10662C1101CA00AE311D /* StreamContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamContent.swift; sourceTree = "<group>"; };
+		888E10682C1101DE00AE311D /* AdContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdContent.swift; sourceTree = "<group>"; };
+		888E106A2C1101E800AE311D /* HeaderContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderContent.swift; sourceTree = "<group>"; };
+		888E106C2C1101FC00AE311D /* MainCVSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCVSection.swift; sourceTree = "<group>"; };
 		889213E12BE02AB8007C8849 /* SegmentControlViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentControlViewController.swift; sourceTree = "<group>"; };
 		889213E32BE02AE5007C8849 /* SegmentControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentControlView.swift; sourceTree = "<group>"; };
 		889213E52BE02B0C007C8849 /* Segments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Segments.swift; sourceTree = "<group>"; };
@@ -286,6 +296,7 @@
 		888E10422C10D30300AE311D /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				888E10632C1101A600AE311D /* Model */,
 				888E10432C10D35500AE311D /* View */,
 				888E10442C10D35D00AE311D /* ViewModel */,
 			);
@@ -356,6 +367,18 @@
 				888E10542C10E19D00AE311D /* SegmentCVCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		888E10632C1101A600AE311D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				888E10642C1101B100AE311D /* NormalContent.swift */,
+				888E10662C1101CA00AE311D /* StreamContent.swift */,
+				888E10682C1101DE00AE311D /* AdContent.swift */,
+				888E106A2C1101E800AE311D /* HeaderContent.swift */,
+				888E106C2C1101FC00AE311D /* MainCVSection.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		889213DC2BE02A69007C8849 /* Common */ = {
@@ -606,14 +629,19 @@
 				88A894612BCE7A2A00AEC0A0 /* UIColor+.swift in Sources */,
 				88A894662BCEC8C600AEC0A0 /* String+.swift in Sources */,
 				884AE99C2BDF8DF2000F7F8C /* NSObject+.swift in Sources */,
+				888E106D2C1101FC00AE311D /* MainCVSection.swift in Sources */,
+				888E10692C1101DE00AE311D /* AdContent.swift in Sources */,
 				888E10622C11005600AE311D /* HomeViewModel.swift in Sources */,
 				888E104E2C10DF3000AE311D /* Segments.swift in Sources */,
 				888E10462C10D59A00AE311D /* AppTabBarController.swift in Sources */,
+				888E10652C1101B100AE311D /* NormalContent.swift in Sources */,
+				888E10672C1101CA00AE311D /* StreamContent.swift in Sources */,
 				88A894592BCE69AC00AEC0A0 /* Font+.swift in Sources */,
 				888E10522C10E18200AE311D /* SegmentControlView.swift in Sources */,
 				888E104A2C10D6E500AE311D /* AppTab.swift in Sources */,
 				888E10602C11000600AE311D /* ViewModelType.swift in Sources */,
 				888E10552C10E19D00AE311D /* SegmentCVCell.swift in Sources */,
+				888E106B2C1101E800AE311D /* HeaderContent.swift in Sources */,
 				88A8945F2BCE761000AEC0A0 /* UITextField+.swift in Sources */,
 				88A8942A2BCE644400AEC0A0 /* AppDelegate.swift in Sources */,
 				88A8942C2BCE644400AEC0A0 /* SceneDelegate.swift in Sources */,
