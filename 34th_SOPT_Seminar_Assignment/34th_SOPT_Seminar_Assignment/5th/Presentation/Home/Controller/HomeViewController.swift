@@ -8,6 +8,7 @@
 import UIKit
 import SnapKit
 import Then
+import RxSwift
 import RxCocoa
 import RxDataSources
 
@@ -76,7 +77,42 @@ extension HomeViewController {
             )
         )
         
-//        let dataSource = RxCollectionViewSectionedReloadDataSource<<#Section: SectionModelType#>>
+        let dataSource = RxCollectionViewSectionedReloadDataSource<SectionModel<MainCVSection, MainCVItem>>(
+            configureCell: { dataSource, collectionView, indexPath, item in
+                switch item {
+                case .topCarousel:
+                    guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TopCarouselCVCell.className, for: indexPath) as? TopCarouselCVCell else {
+                        return UICollectionViewCell() }
+                    return cell
+                case .recommend(let content), .event(let content), .fantastic(let content):
+                    guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NormalContentCVCell.className, for: indexPath) as? NormalContentCVCell else { return UICollectionViewCell() }
+                    cell.fetchData(content[indexPath.row])
+                    return cell
+                case .stream(let content):
+                    guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: StreamContentCVCell.className, for: indexPath) as? StreamContentCVCell else { return UICollectionViewCell() }
+                    cell.fetchData(content[indexPath.row])
+                    return cell
+                case .ads(let content):
+                    guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AdContentCVCell.className, for: indexPath) as? AdContentCVCell else { return UICollectionViewCell() }
+                    cell.fetchData(content[indexPath.row])
+                    return cell
+                }
+            },
+            configureSupplementaryView: { dataSource, collectionView, kind, indexPath in
+                guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: CVHeaderView.className, for: indexPath) as? CVHeaderView,
+                      MainCVSection.allCases[indexPath.section] != .topCarousel
+                else { return UICollectionReusableView() }
+                
+                let headerData = MainCVSection.allCases[indexPath.section].getHeaderContent()
+                header.fetchData(headerData)
+                return header
+            }
+        )
+        
+        viewModelOutput.sections
+            .asDriver(onErrorJustReturn: [])
+            .drive(rootView.mainContentView.rx.items(dataSource: dataSource))
+            .disposed(by: self.viewModel.disposeBag)
     }
 }
 
