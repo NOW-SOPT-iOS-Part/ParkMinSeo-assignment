@@ -9,6 +9,7 @@ import UIKit
 import SnapKit
 import Then
 import RxCocoa
+import RxDataSources
 
 final class HomeViewController: UIViewController {
     
@@ -30,6 +31,7 @@ final class HomeViewController: UIViewController {
         setUpView()
         setUpLayout()
         setUpConstraint()
+        bind()
     }
     
     // MARK: setUpView
@@ -73,6 +75,8 @@ extension HomeViewController {
                 cellDidTap: segmentOutput
             )
         )
+        
+//        let dataSource = RxCollectionViewSectionedReloadDataSource<<#Section: SectionModelType#>>
     }
 }
 

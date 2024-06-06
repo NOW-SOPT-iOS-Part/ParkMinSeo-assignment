@@ -14,3 +14,12 @@ struct AdContent {
     /// 이미지
     let image: String
 }
+
+extension AdContent {
+    static func dummyData() -> [AdContent] {
+        return [
+            AdContent(contentId: 1, image: "longTabImage1"),
+            AdContent(contentId: 2, image: "longTabImage1")
+        ]
+    }
+}

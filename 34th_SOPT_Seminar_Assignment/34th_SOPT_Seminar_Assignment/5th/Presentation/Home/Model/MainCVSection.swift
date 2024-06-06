@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import Differentiator
 
 enum MainCVSection: Hashable, CaseIterable {
     /// 최상단 캐러셀 섹션
@@ -21,6 +22,15 @@ enum MainCVSection: Hashable, CaseIterable {
     case ads
     /// 신비로운 영화 섹션
     case fantastic
+}
+
+enum MainCVItem {
+    case topCarousel([String])
+    case recommend([NormalContent])
+    case stream([StreamContent])
+    case event([NormalContent])
+    case ads([AdContent])
+    case fantastic([NormalContent])
 }
 
 extension MainCVSection {
