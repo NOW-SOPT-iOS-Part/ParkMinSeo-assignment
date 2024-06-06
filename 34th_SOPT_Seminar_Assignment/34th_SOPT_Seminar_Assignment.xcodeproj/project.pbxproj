@@ -31,6 +31,8 @@
 		888E10782C11070900AE311D /* TopCarouselCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888E10772C11070800AE311D /* TopCarouselCVCell.swift */; };
 		888E107A2C110F4F00AE311D /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888E10792C110F4F00AE311D /* HomeView.swift */; };
 		888E107D2C11138600AE311D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888E107C2C11138600AE311D /* HomeViewController.swift */; };
+		888E10802C11BCA700AE311D /* Differentiator in Frameworks */ = {isa = PBXBuildFile; productRef = 888E107F2C11BCA700AE311D /* Differentiator */; };
+		888E10822C11BCA700AE311D /* RxDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = 888E10812C11BCA700AE311D /* RxDataSources */; };
 		88A8942A2BCE644400AEC0A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A894292BCE644400AEC0A0 /* AppDelegate.swift */; };
 		88A8942C2BCE644400AEC0A0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A8942B2BCE644400AEC0A0 /* SceneDelegate.swift */; };
 		88A894312BCE644400AEC0A0 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 88A894302BCE644400AEC0A0 /* Base */; };
@@ -135,10 +137,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				888E10802C11BCA700AE311D /* Differentiator in Frameworks */,
 				888E105C2C10ED7D00AE311D /* RxSwift in Frameworks */,
 				888E105A2C10ED7D00AE311D /* RxRelay in Frameworks */,
 				88A8943F2BCE661800AEC0A0 /* SnapKit in Frameworks */,
 				88A894422BCE662700AEC0A0 /* Then in Frameworks */,
+				888E10822C11BCA700AE311D /* RxDataSources in Frameworks */,
 				888E10582C10ED7D00AE311D /* RxCocoa in Frameworks */,
 				88759DA02BED4C9A000E4B83 /* Moya in Frameworks */,
 			);
@@ -592,6 +596,8 @@
 				888E10572C10ED7D00AE311D /* RxCocoa */,
 				888E10592C10ED7D00AE311D /* RxRelay */,
 				888E105B2C10ED7D00AE311D /* RxSwift */,
+				888E107F2C11BCA700AE311D /* Differentiator */,
+				888E10812C11BCA700AE311D /* RxDataSources */,
 			);
 			productName = 34th_SOPT_Seminar_Assignment;
 			productReference = 88A894262BCE644400AEC0A0 /* 34th_SOPT_Seminar_Assignment.app */;
@@ -626,6 +632,7 @@
 				88A894402BCE662700AEC0A0 /* XCRemoteSwiftPackageReference "Then" */,
 				88759D9E2BED4C9A000E4B83 /* XCRemoteSwiftPackageReference "Moya" */,
 				888E10562C10ED7D00AE311D /* XCRemoteSwiftPackageReference "RxSwift" */,
+				888E107E2C11BCA700AE311D /* XCRemoteSwiftPackageReference "RxDataSources" */,
 			);
 			productRefGroup = 88A894272BCE644400AEC0A0 /* Products */;
 			projectDirPath = "";
@@ -933,6 +940,14 @@
 				minimumVersion = 6.7.1;
 			};
 		};
+		888E107E2C11BCA700AE311D /* XCRemoteSwiftPackageReference "RxDataSources" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RxSwiftCommunity/RxDataSources.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.2;
+			};
+		};
 		88A8943D2BCE661800AEC0A0 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -971,6 +986,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 888E10562C10ED7D00AE311D /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxSwift;
+		};
+		888E107F2C11BCA700AE311D /* Differentiator */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 888E107E2C11BCA700AE311D /* XCRemoteSwiftPackageReference "RxDataSources" */;
+			productName = Differentiator;
+		};
+		888E10812C11BCA700AE311D /* RxDataSources */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 888E107E2C11BCA700AE311D /* XCRemoteSwiftPackageReference "RxDataSources" */;
+			productName = RxDataSources;
 		};
 		88A8943E2BCE661800AEC0A0 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
