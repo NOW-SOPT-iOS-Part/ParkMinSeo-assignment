@@ -35,7 +35,7 @@ final class SegmentControlView: UICollectionView {
 // MARK: Interface Function
 extension SegmentControlView {
     // MARK: Bind Data
-    func bind(segments: Observable<[Segments]>, cellDidTap: PublishRelay<Segments>, disposeBag: DisposeBag) {
+    func bind(segments: Observable<[Segments]>, disposeBag: DisposeBag) -> Observable<Segments> {
         
         segments.bind(
             to: self.rx.items(
@@ -47,9 +47,7 @@ extension SegmentControlView {
         }
         .disposed(by: disposeBag)
         
-        self.rx.modelSelected(Segments.self)
-            .bind(to: cellDidTap)
-            .disposed(by: disposeBag)
+        return self.rx.modelSelected(Segments.self).asObservable()
     }
 }
 

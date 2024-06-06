@@ -14,7 +14,7 @@ final class HomeView: UIView {
     // MARK: Properties
     
     // MARK: Views
-    private lazy var mainContentView = UICollectionView(frame: .zero, collectionViewLayout: self.createLayout())
+    lazy var mainContentView = UICollectionView(frame: .zero, collectionViewLayout: self.createLayout())
     
     // MARK: init
     override init(frame: CGRect) {
