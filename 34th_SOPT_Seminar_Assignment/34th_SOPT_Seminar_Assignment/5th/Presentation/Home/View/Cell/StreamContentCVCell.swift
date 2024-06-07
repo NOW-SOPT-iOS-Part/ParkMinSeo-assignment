@@ -15,15 +15,10 @@ class StreamContentCVCell: UICollectionViewCell {
     private var cellContent: StreamContent?
     
     // MARK: Views
-    /// 컨텐츠 이미지
     private let contentImageView = UIImageView()
-    /// 순위 라벨
     private let rankLabel = UILabel()
-    /// 방송사 라벨
     private let broadcastingCompLabel = UILabel()
-    /// 컨텐츠 타이틀
     private let contentTitle = UILabel()
-    /// 시청률 라벨
     private let viewershipLabel = UILabel()
     
     

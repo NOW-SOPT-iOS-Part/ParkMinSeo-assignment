@@ -15,7 +15,6 @@ class AdContentCVCell: UICollectionViewCell {
     private var cellContent: AdContent?
     
     // MARK: Views
-    /// 컨텐츠 이미지
     private let contentImageView = UIImageView()
     
     // MARK: cell init

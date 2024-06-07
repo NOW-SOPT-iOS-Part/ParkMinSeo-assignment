@@ -15,9 +15,7 @@ final class CVHeaderView: UICollectionReusableView {
     private var cellContent: HeaderContent?
     
     // MARK: Views
-    /// 컨텐츠 뷰 헤더 타이틀
     private let titleLabel = UILabel()
-    /// 우측 버튼
     private let rightButton = UIButton()
     
     // MARK: header init

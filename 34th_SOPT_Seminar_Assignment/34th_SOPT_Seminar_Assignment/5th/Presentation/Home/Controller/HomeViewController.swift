@@ -29,16 +29,9 @@ final class HomeViewController: UIViewController {
     
     // MARK: Life Cycle - viewDidLoad
     override func viewDidLoad() {
-        setUpView()
         setUpLayout()
         setUpConstraint()
         bind()
-    }
-    
-    // MARK: setUpView
-    private func setUpView() {
-//        rootView.mainContentView.delegate = self
-//        rootView.mainContentView.dataSource = self
     }
     
     // MARK: setUpLayout

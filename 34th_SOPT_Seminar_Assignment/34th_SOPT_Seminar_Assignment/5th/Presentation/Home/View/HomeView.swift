@@ -10,9 +10,7 @@ import SnapKit
 import Then
 
 final class HomeView: UIView {
-    
-    // MARK: Properties
-    
+
     // MARK: Views
     lazy var mainContentView = UICollectionView(frame: .zero, collectionViewLayout: self.createLayout())
     

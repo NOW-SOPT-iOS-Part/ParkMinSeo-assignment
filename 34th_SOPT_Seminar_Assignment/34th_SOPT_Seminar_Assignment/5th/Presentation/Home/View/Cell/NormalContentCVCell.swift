@@ -15,9 +15,7 @@ class NormalContentCVCell: UICollectionViewCell {
     private var cellContent: NormalContent?
     
     // MARK: Views
-    /// 컨텐츠 이미지
     private let contentImageView = UIImageView()
-    /// 컨텐츠 타이틀
     private let contentTitle = UILabel()
     
     // MARK: cell init
