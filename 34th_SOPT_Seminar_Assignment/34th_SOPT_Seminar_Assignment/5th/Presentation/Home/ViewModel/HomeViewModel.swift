@@ -57,23 +57,23 @@ final class HomeViewModel: ViewModelType {
                 ),
                 SectionModel(
                     model: .recommend,
-                    items: [.recommend(NormalContent.dummyData())]
+                    items: NormalContent.dummyData().map { .recommend($0) }
                 ),
                 SectionModel(
                     model: .stream,
-                    items: [.stream(StreamContent.dummyData())]
+                    items: StreamContent.dummyData().map { .stream($0) }
                 ),
                 SectionModel(
                     model: .event,
-                    items: [.event(NormalContent.dummyData())]
+                    items: NormalContent.dummyData().map { .event($0) }
                 ),
                 SectionModel(
                     model: .ads,
-                    items: [.ads(AdContent.dummyData())]
+                    items: AdContent.dummyData().map { .ads($0) }
                 ),
                 SectionModel(
                     model: .fantastic,
-                    items: [.fantastic(NormalContent.dummyData())]
+                    items: NormalContent.dummyData().map { .fantastic($0) }
                 )
             ]
         )

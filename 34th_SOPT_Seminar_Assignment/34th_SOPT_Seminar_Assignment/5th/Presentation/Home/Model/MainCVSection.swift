@@ -26,11 +26,11 @@ enum MainCVSection: Hashable, CaseIterable {
 
 enum MainCVItem {
     case topCarousel([String])
-    case recommend([NormalContent])
-    case stream([StreamContent])
-    case event([NormalContent])
-    case ads([AdContent])
-    case fantastic([NormalContent])
+    case recommend(NormalContent)
+    case stream(StreamContent)
+    case event(NormalContent)
+    case ads(AdContent)
+    case fantastic(NormalContent)
 }
 
 extension MainCVSection {

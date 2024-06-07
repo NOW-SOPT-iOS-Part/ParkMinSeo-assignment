@@ -37,8 +37,8 @@ final class HomeViewController: UIViewController {
     
     // MARK: setUpView
     private func setUpView() {
-        rootView.mainContentView.delegate = self
-        rootView.mainContentView.dataSource = self
+//        rootView.mainContentView.delegate = self
+//        rootView.mainContentView.dataSource = self
     }
     
     // MARK: setUpLayout
@@ -81,20 +81,20 @@ extension HomeViewController {
             configureCell: { dataSource, collectionView, indexPath, item in
                 switch item {
                 case .topCarousel:
-                    guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TopCarouselCVCell.className, for: indexPath) as? TopCarouselCVCell else {
-                        return UICollectionViewCell() }
+                    guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TopCarouselCVCell.className, for: indexPath) as? TopCarouselCVCell else { return UICollectionViewCell() }
+//                    cell.bind(images: <#T##Observable<[String]>#>, currentPage: <#T##BehaviorRelay<Int>#>, disposeBag: <#T##DisposeBag#>)
                     return cell
                 case .recommend(let content), .event(let content), .fantastic(let content):
                     guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NormalContentCVCell.className, for: indexPath) as? NormalContentCVCell else { return UICollectionViewCell() }
-                    cell.fetchData(content[indexPath.row])
+                    cell.fetchData(content)
                     return cell
                 case .stream(let content):
                     guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: StreamContentCVCell.className, for: indexPath) as? StreamContentCVCell else { return UICollectionViewCell() }
-                    cell.fetchData(content[indexPath.row])
+                    cell.fetchData(content)
                     return cell
                 case .ads(let content):
                     guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AdContentCVCell.className, for: indexPath) as? AdContentCVCell else { return UICollectionViewCell() }
-                    cell.fetchData(content[indexPath.row])
+                    cell.fetchData(content)
                     return cell
                 }
             },
@@ -114,63 +114,4 @@ extension HomeViewController {
             .drive(rootView.mainContentView.rx.items(dataSource: dataSource))
             .disposed(by: self.viewModel.disposeBag)
     }
-}
-
-// MARK: UICollectionViewDelegate
-extension HomeViewController: UICollectionViewDelegate {
-    // MARK: 별도의 DiffableDataSource 없이 Header 등록 시 필요합니다
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: CVHeaderView.className, for: indexPath) as? CVHeaderView,
-                MainCVSection.allCases[indexPath.section] != .topCarousel
-        else { return UICollectionReusableView() }
-                
-        let headerData = MainCVSection.allCases[indexPath.section].getHeaderContent()
-        
-        header.fetchData(headerData)
-        return header
-    }
-}
-
-// MARK: UICollectionViewDataSource
-extension HomeViewController: UICollectionViewDataSource {
-    
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return MainCVSection.allCases.count
-    }
-        
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        switch MainCVSection.allCases[section] {
-        case .topCarousel:
-            return 1
-        case .recommend, .event, .fantastic, .stream:
-            return 4
-        case .ads:
-            return 2
-        }
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        switch MainCVSection.allCases[indexPath.section] {
-        
-        case .topCarousel:
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TopCarouselCVCell.className, for: indexPath) as? TopCarouselCVCell else {
-                return UICollectionViewCell() }
-            return cell
-        case .recommend, .event, .fantastic:
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NormalContentCVCell.className, for: indexPath) as? NormalContentCVCell else { return UICollectionViewCell() }
-            cell.fetchData(viewModel.normalData.value[indexPath.row])
-            return cell
-        case .stream:
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: StreamContentCVCell.className, for: indexPath) as? StreamContentCVCell else { return UICollectionViewCell() }
-            cell.fetchData(viewModel.streamData.value[indexPath.row])
-            return cell
-        case .ads:
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AdContentCVCell.className, for: indexPath) as? AdContentCVCell else { return UICollectionViewCell() }
-            cell.fetchData(.init(contentId: 1, image: "longTabImage1"))
-            return cell
-        }
-    }
-    
-    
 }
