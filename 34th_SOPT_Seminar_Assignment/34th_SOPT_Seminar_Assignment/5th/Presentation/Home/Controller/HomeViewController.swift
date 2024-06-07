@@ -19,7 +19,7 @@ final class HomeViewController: UIViewController {
     
     // MARK: View
     private let rootView = HomeView()
-    private let topAboveView = UIView()
+    private let topAboveView = TopView()
     private let segmentView = SegmentControlView()
         
     // MARK: Life Cycle - loadView

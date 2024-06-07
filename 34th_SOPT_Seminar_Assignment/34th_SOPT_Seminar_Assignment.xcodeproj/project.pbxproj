@@ -33,6 +33,7 @@
 		888E107D2C11138600AE311D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888E107C2C11138600AE311D /* HomeViewController.swift */; };
 		888E10802C11BCA700AE311D /* Differentiator in Frameworks */ = {isa = PBXBuildFile; productRef = 888E107F2C11BCA700AE311D /* Differentiator */; };
 		888E10822C11BCA700AE311D /* RxDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = 888E10812C11BCA700AE311D /* RxDataSources */; };
+		888E10A32C1350F400AE311D /* TopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888E10A22C1350F400AE311D /* TopView.swift */; };
 		88A8942A2BCE644400AEC0A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A894292BCE644400AEC0A0 /* AppDelegate.swift */; };
 		88A8942C2BCE644400AEC0A0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A8942B2BCE644400AEC0A0 /* SceneDelegate.swift */; };
 		88A894312BCE644400AEC0A0 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 88A894302BCE644400AEC0A0 /* Base */; };
@@ -98,6 +99,7 @@
 		888E10772C11070800AE311D /* TopCarouselCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopCarouselCVCell.swift; sourceTree = "<group>"; };
 		888E10792C110F4F00AE311D /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		888E107C2C11138600AE311D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		888E10A22C1350F400AE311D /* TopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopView.swift; sourceTree = "<group>"; };
 		889213E12BE02AB8007C8849 /* SegmentControlViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentControlViewController.swift; sourceTree = "<group>"; };
 		889213E32BE02AE5007C8849 /* SegmentControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentControlView.swift; sourceTree = "<group>"; };
 		889213E52BE02B0C007C8849 /* Segments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Segments.swift; sourceTree = "<group>"; };
@@ -327,6 +329,7 @@
 			children = (
 				888E106E2C1105D700AE311D /* Cell */,
 				888E10792C110F4F00AE311D /* HomeView.swift */,
+				888E10A22C1350F400AE311D /* TopView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -696,6 +699,7 @@
 				88A8945F2BCE761000AEC0A0 /* UITextField+.swift in Sources */,
 				88A8942A2BCE644400AEC0A0 /* AppDelegate.swift in Sources */,
 				88A8942C2BCE644400AEC0A0 /* SceneDelegate.swift in Sources */,
+				888E10A32C1350F400AE311D /* TopView.swift in Sources */,
 				88A8945B2BCE72C100AEC0A0 /* UIView+.swift in Sources */,
 				88A894642BCEA10700AEC0A0 /* CustomTextField.swift in Sources */,
 			);
