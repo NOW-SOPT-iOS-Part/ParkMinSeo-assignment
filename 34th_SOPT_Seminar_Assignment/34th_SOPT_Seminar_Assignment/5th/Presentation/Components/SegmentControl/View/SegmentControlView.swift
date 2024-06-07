@@ -47,6 +47,15 @@ extension SegmentControlView {
         }
         .disposed(by: disposeBag)
         
+        segments
+            .take(1)
+            .subscribe(onNext: { [weak self] segments in
+                guard let self = self else { return }
+                self.selectItem(at: IndexPath(item: 0, section: 0), animated: false, scrollPosition: [])
+                self.delegate?.collectionView?(self, didSelectItemAt: IndexPath(item: 0, section: 0))
+            })
+            .disposed(by: disposeBag)
+        
         return self.rx.modelSelected(Segments.self).asObservable()
     }
 }
