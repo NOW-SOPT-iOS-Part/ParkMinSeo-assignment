@@ -13,6 +13,9 @@ import RxRelay
 
 final class TopCarouselCVCell: UICollectionViewCell {
     
+    // MARK: Property
+    private var isManualScroll = false
+    
     // MARK: Views
     private let collectionView = UICollectionView(frame: .zero, collectionViewLayout: TopCarouselCVCell.createLayout())
     private let pageControl = UIPageControl()
@@ -32,8 +35,7 @@ final class TopCarouselCVCell: UICollectionViewCell {
     
     // MARK: setUpView
     private func setUpView() {
-        self.collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "justImageCell")
-        self.pageControl.addAction(pageChangeAction, for: .touchUpInside)
+        self.collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "imageCell")
     }
     
     // MARK: setUpStyle
@@ -42,11 +44,6 @@ final class TopCarouselCVCell: UICollectionViewCell {
             $0.showsHorizontalScrollIndicator = false
             $0.isPagingEnabled = true
         }
-        
-//        pageControl.do {
-//            $0.numberOfPages = images.count
-//            $0.currentPage = currentPage
-//        }
     }
     
     // MARK: setUpLayout
@@ -71,15 +68,6 @@ final class TopCarouselCVCell: UICollectionViewCell {
             $0.height.equalTo(40)
         }
     }
-    
-    // MARK: private func - pageControl Action
-    private lazy var pageChangeAction = UIAction { [weak self] action in
-        guard let sender = action.sender as? UIPageControl, let self = self else { return }
-        let currentPage = sender.currentPage
-        let xOffset = CGFloat(currentPage) * collectionView.frame.size.width
-        collectionView.setContentOffset(CGPoint(x: xOffset, y: 0), animated: true)
-    }
-
 }
 
 // MARK: Interface Function
@@ -99,19 +87,45 @@ extension TopCarouselCVCell {
         }
         .disposed(by: disposeBag)
         
-        // TODO: CHECK - numberOfPage 필요할 수도
+        images
+            .map { $0.count }
+            .bind(to: self.pageControl.rx.numberOfPages)
+            .disposed(by: disposeBag)
         
         currentPage
             .bind(to: self.pageControl.rx.currentPage)
             .disposed(by: disposeBag)
         
+        
+        self.pageControl.rx.controlEvent(.valueChanged)
+            .bind(onNext: {
+                let currentPage = self.pageControl.currentPage
+                self.isManualScroll = true
+                let xOffset = CGFloat(currentPage) * self.collectionView.frame.size.width
+                self.collectionView.setContentOffset(CGPoint(x: xOffset, y: 0), animated: true)
+            })
+            .disposed(by: disposeBag)
+        
         self.collectionView.rx.contentOffset
             .map { [weak self] contentOffset -> Int in
-                guard let self = self else { return 0 }
-                return Int(contentOffset.x / self.collectionView.frame.width)
+                guard let self = self, self.collectionView.frame.width > 0 else { return 0 }
+                let page = contentOffset.x / self.collectionView.frame.width
+                return page.isFinite ? Int(page) : 0
             }
-            .bind(to: pageControl.rx.currentPage)
+            .distinctUntilChanged()
+            .filter { [weak self] _ in
+                guard let self = self else { return false }
+                return !self.isManualScroll
+            }
+            .bind(to: currentPage)
             .disposed(by: disposeBag)
+        
+        self.collectionView.rx.didEndScrollingAnimation
+            .subscribe(onNext: { [weak self] in
+                self?.isManualScroll = false
+            })
+            .disposed(by: disposeBag)
+       
     }
 }
 

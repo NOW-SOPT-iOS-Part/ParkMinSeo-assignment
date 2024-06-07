@@ -13,8 +13,7 @@ final class HomeViewModel: ViewModelType {
     
     // MARK: Properties
     let segments = Observable<[Segments]>.just(Segments.allCases)
-    let normalData = BehaviorRelay<[NormalContent]>(value: NormalContent.dummyData())
-    let streamData = BehaviorRelay<[StreamContent]>(value: StreamContent.dummyData())
+    let currentPage = BehaviorRelay<Int>(value: 0)
     let disposeBag = DisposeBag()
     
     // MARK: Input
@@ -26,8 +25,6 @@ final class HomeViewModel: ViewModelType {
     struct Output {
         let segments: Observable<[Segments]>
         let sections: Observable<[SectionModel<MainCVSection, MainCVItem>]>
-        let normalData: Observable<[NormalContent]>
-        let streamData: Observable<[StreamContent]>
     }
     
     // MARK: Transform
@@ -80,9 +77,7 @@ final class HomeViewModel: ViewModelType {
         
         return Output(
             segments: segments.asObservable(),
-            sections: sections,
-            normalData: normalData.asObservable(),
-            streamData: streamData.asObservable()
+            sections: sections
         )
     }
 }

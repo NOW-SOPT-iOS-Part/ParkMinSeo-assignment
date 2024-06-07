@@ -80,9 +80,9 @@ extension HomeViewController {
         let dataSource = RxCollectionViewSectionedReloadDataSource<SectionModel<MainCVSection, MainCVItem>>(
             configureCell: { dataSource, collectionView, indexPath, item in
                 switch item {
-                case .topCarousel:
+                case .topCarousel(let content):
                     guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TopCarouselCVCell.className, for: indexPath) as? TopCarouselCVCell else { return UICollectionViewCell() }
-//                    cell.bind(images: <#T##Observable<[String]>#>, currentPage: <#T##BehaviorRelay<Int>#>, disposeBag: <#T##DisposeBag#>)
+                    cell.bind(images: Observable.just(content), currentPage: self.viewModel.currentPage, disposeBag: self.viewModel.disposeBag)
                     return cell
                 case .recommend(let content), .event(let content), .fantastic(let content):
                     guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NormalContentCVCell.className, for: indexPath) as? NormalContentCVCell else { return UICollectionViewCell() }
